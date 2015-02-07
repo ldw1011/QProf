@@ -5,7 +5,7 @@ void test(float a[8], float b[8])
   for (int i=0; i<8; i++)
   {
     b[i]=a[i]*coeff[i];
-    if(b[i]>0)
+    if(b[i]<2)
     {
       b[i]=1;
     }

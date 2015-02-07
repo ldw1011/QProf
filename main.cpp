@@ -7,11 +7,12 @@
 #include "llvm/PassManager.h"
 #include "QProf.h"
 #include "QTag.h"
-#include "llvm/IR/Dominators.h"
 #include "llvm/Bitcode/ReaderWriter.h"
 #include "llvm/Support/FileSystem.h"
 #include "llvm/Transforms/Scalar.h"
 #include "llvm/Target/TargetLibraryInfo.h"
+#include "ExtractGraphModel.h"
+#include "IfConversion.h"
 using namespace llvm;
 int main(int argc, char** argv)
 {
@@ -30,9 +31,17 @@ int main(int argc, char** argv)
   if (Mod)
   {
     PassManager PM;
-    PM.add(new QTag());
-    PM.add(new TargetLibraryInfo());
     PM.add(createPromoteMemoryToRegisterPass());
+// if conversion
+    PM.add(new IfConversion());
+    PM.add(createGVNPass());
+    PM.add(createInstructionCombiningPass());
+    PM.add(createCFGSimplificationPass());
+// tagging
+    PM.add(new QTag());
+
+//Loop unrolling and constant propagation
+    PM.add(new TargetLibraryInfo());
     PM.add(createLCSSAPass());
     PM.add(createLoopRotatePass());
     PM.add(createLCSSAPass());
@@ -40,11 +49,40 @@ int main(int argc, char** argv)
     PM.add(createSCCPPass());
     PM.add(createLCSSAPass());
     PM.add(createLoopUnrollPass(10000000));
-    PM.add(new QProf());
     PM.add(createCFGSimplificationPass());
-    PM.add(createFlattenCFGPass());
-    PM.add(createStructurizeCFGPass());
     PM.add(createSCCPPass());
+    PM.add(createConstantPropagationPass());
+    PM.add(createConstantHoistingPass());
+    PM.add(createCorrelatedValuePropagationPass());
+    PM.add(createInstructionSimplifierPass());
+
+
+//    PM.add(new QProf());
+//    PM.add(new ExtractGraphModel());
+
+//    PM.add(new TargetLibraryInfo());
+//    PM.add(createSCCPPass());
+   //PM.add(createCFGSimplificationPass());
+   //PM.add(createInstructionSimplifierPass());
+   //PM.add(createInstructionCombiningPass());
+   //PM.add(new QTag());
+   //PM.add(new TargetLibraryInfo());
+   //PM.add(createLCSSAPass());
+   //PM.add(createLoopRotatePass());
+   //PM.add(createLCSSAPass());
+   //PM.add(createLoopSimplifyPass());
+   //PM.add(createSCCPPass());
+   //PM.add(createLCSSAPass());
+   //PM.add(createLoopUnrollPass(10000000));
+   //PM.add(new QProf());
+   //PM.add(new ExtractGraphModel());
+   //PM.add(createFlattenCFGPass());
+   //PM.add(createStructurizeCFGPass());
+   //PM.add(createSCCPPass());
+   //PM.add(createConstantPropagationPass());
+   //PM.add(createConstantHoistingPass());
+   //PM.add(createCorrelatedValuePropagationPass());
+   //PM.add(createInstructionSimplifierPass());
     PM.run(*Mod);
     WriteBitcodeToFile(Mod,out); 
   }

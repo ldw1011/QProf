@@ -1,0 +1,1703 @@
+./simple-tool: error: 
+
+^
+Set size: 1
+eliminateDiamondIfStruct
+mergeBasicBlock
+BODY: 
+; <label>:3                                       ; preds = %1
+  %4 = mul nsw i32 8, %i.0
+  %5 = add nsw i32 %4, 0
+  %6 = sext i32 %5 to i64
+  %7 = getelementptr inbounds float* %in, i64 %6
+  %8 = load float* %7, align 4
+  %9 = mul nsw i32 8, %i.0
+  %10 = add nsw i32 %9, 7
+  %11 = sext i32 %10 to i64
+  %12 = getelementptr inbounds float* %in, i64 %11
+  %13 = load float* %12, align 4
+  %14 = fadd float %8, %13
+  %15 = mul nsw i32 8, %i.0
+  %16 = add nsw i32 %15, 1
+  %17 = sext i32 %16 to i64
+  %18 = getelementptr inbounds float* %in, i64 %17
+  %19 = load float* %18, align 4
+  %20 = mul nsw i32 8, %i.0
+  %21 = add nsw i32 %20, 6
+  %22 = sext i32 %21 to i64
+  %23 = getelementptr inbounds float* %in, i64 %22
+  %24 = load float* %23, align 4
+  %25 = fadd float %19, %24
+  %26 = mul nsw i32 8, %i.0
+  %27 = add nsw i32 %26, 2
+  %28 = sext i32 %27 to i64
+  %29 = getelementptr inbounds float* %in, i64 %28
+  %30 = load float* %29, align 4
+  %31 = mul nsw i32 8, %i.0
+  %32 = add nsw i32 %31, 5
+  %33 = sext i32 %32 to i64
+  %34 = getelementptr inbounds float* %in, i64 %33
+  %35 = load float* %34, align 4
+  %36 = fadd float %30, %35
+  %37 = mul nsw i32 8, %i.0
+  %38 = add nsw i32 %37, 3
+  %39 = sext i32 %38 to i64
+  %40 = getelementptr inbounds float* %in, i64 %39
+  %41 = load float* %40, align 4
+  %42 = mul nsw i32 8, %i.0
+  %43 = add nsw i32 %42, 4
+  %44 = sext i32 %43 to i64
+  %45 = getelementptr inbounds float* %in, i64 %44
+  %46 = load float* %45, align 4
+  %47 = fadd float %41, %46
+  %48 = mul nsw i32 8, %i.0
+  %49 = add nsw i32 %48, 0
+  %50 = sext i32 %49 to i64
+  %51 = getelementptr inbounds float* %in, i64 %50
+  %52 = load float* %51, align 4
+  %53 = mul nsw i32 8, %i.0
+  %54 = add nsw i32 %53, 7
+  %55 = sext i32 %54 to i64
+  %56 = getelementptr inbounds float* %in, i64 %55
+  %57 = load float* %56, align 4
+  %58 = fsub float %52, %57
+  %59 = mul nsw i32 8, %i.0
+  %60 = add nsw i32 %59, 1
+  %61 = sext i32 %60 to i64
+  %62 = getelementptr inbounds float* %in, i64 %61
+  %63 = load float* %62, align 4
+  %64 = mul nsw i32 8, %i.0
+  %65 = add nsw i32 %64, 6
+  %66 = sext i32 %65 to i64
+  %67 = getelementptr inbounds float* %in, i64 %66
+  %68 = load float* %67, align 4
+  %69 = fsub float %63, %68
+  %70 = mul nsw i32 8, %i.0
+  %71 = add nsw i32 %70, 2
+  %72 = sext i32 %71 to i64
+  %73 = getelementptr inbounds float* %in, i64 %72
+  %74 = load float* %73, align 4
+  %75 = mul nsw i32 8, %i.0
+  %76 = add nsw i32 %75, 5
+  %77 = sext i32 %76 to i64
+  %78 = getelementptr inbounds float* %in, i64 %77
+  %79 = load float* %78, align 4
+  %80 = fsub float %74, %79
+  %81 = mul nsw i32 8, %i.0
+  %82 = add nsw i32 %81, 3
+  %83 = sext i32 %82 to i64
+  %84 = getelementptr inbounds float* %in, i64 %83
+  %85 = load float* %84, align 4
+  %86 = mul nsw i32 8, %i.0
+  %87 = add nsw i32 %86, 4
+  %88 = sext i32 %87 to i64
+  %89 = getelementptr inbounds float* %in, i64 %88
+  %90 = load float* %89, align 4
+  %91 = fsub float %85, %90
+  %92 = fadd float %14, %47
+  %93 = fadd float %25, %36
+  %94 = fsub float %25, %36
+  %95 = fsub float %14, %47
+  %96 = fadd float %92, %93
+  %97 = fpext float %96 to double
+  %98 = fmul double 0x3FE6A09E667F3BCD, %97
+  %99 = fptrunc double %98 to float
+  %100 = add nsw i32 %i.0, 0
+  %101 = sext i32 %100 to i64
+  %102 = getelementptr inbounds float* %out, i64 %101
+  store float %99, float* %102, align 4
+  %103 = fsub float %92, %93
+  %104 = fpext float %103 to double
+  %105 = fmul double 0x3FE6A09E667F3BCD, %104
+  %106 = fptrunc double %105 to float
+  %107 = add nsw i32 %i.0, 32
+  %108 = sext i32 %107 to i64
+  %109 = getelementptr inbounds float* %out, i64 %108
+  store float %106, float* %109, align 4
+  %110 = fpext float %94 to double
+  %111 = fmul double 0x3FD87DE2A6AEA964, %110
+  %112 = fpext float %95 to double
+  %113 = fmul double 0x3FED906BCF328D46, %112
+  %114 = fadd double %111, %113
+  %115 = fptrunc double %114 to float
+  %116 = add nsw i32 %i.0, 16
+  %117 = sext i32 %116 to i64
+  %118 = getelementptr inbounds float* %out, i64 %117
+  store float %115, float* %118, align 4
+  %119 = fpext float %95 to double
+  %120 = fmul double 0x3FD87DE2A6AEA964, %119
+  %121 = fpext float %94 to double
+  %122 = fmul double 0x3FED906BCF328D46, %121
+  %123 = fsub double %120, %122
+  %124 = fptrunc double %123 to float
+  %125 = add nsw i32 %i.0, 48
+  %126 = sext i32 %125 to i64
+  %127 = getelementptr inbounds float* %out, i64 %126
+  store float %124, float* %127, align 4
+  %128 = fsub float %69, %80
+  %129 = fpext float %128 to double
+  %130 = fmul double 0x3FE6A09E667F3BCD, %129
+  %131 = fptrunc double %130 to float
+  %132 = fadd float %69, %80
+  %133 = fpext float %132 to double
+  %134 = fmul double 0x3FE6A09E667F3BCD, %133
+  %135 = fptrunc double %134 to float
+  %136 = fadd float %91, %131
+  %137 = fsub float %91, %131
+  %138 = fsub float %58, %135
+  %139 = fadd float %58, %135
+  %140 = fpext float %136 to double
+  %141 = fmul double 0x3FC8F8B83C69A60D, %140
+  %142 = fpext float %139 to double
+  %143 = fmul double 0x3FEF6297CFF75CB0, %142
+  %144 = fadd double %141, %143
+  %145 = fptrunc double %144 to float
+  %146 = add nsw i32 %i.0, 8
+  %147 = sext i32 %146 to i64
+  %148 = getelementptr inbounds float* %out, i64 %147
+  store float %145, float* %148, align 4
+  %149 = fpext float %138 to double
+  %150 = fmul double 0x3FEA9B66290EA1A3, %149
+  %151 = fpext float %137 to double
+  %152 = fmul double 0x3FE1C73B39AE68C9, %151
+  %153 = fsub double %150, %152
+  %154 = fptrunc double %153 to float
+  %155 = add nsw i32 %i.0, 24
+  %156 = sext i32 %155 to i64
+  %157 = getelementptr inbounds float* %out, i64 %156
+  store float %154, float* %157, align 4
+  %158 = fpext float %137 to double
+  %159 = fmul double 0x3FEA9B66290EA1A3, %158
+  %160 = fpext float %138 to double
+  %161 = fmul double 0x3FE1C73B39AE68C9, %160
+  %162 = fadd double %159, %161
+  %163 = fptrunc double %162 to float
+  %164 = add nsw i32 %i.0, 40
+  %165 = sext i32 %164 to i64
+  %166 = getelementptr inbounds float* %out, i64 %165
+  store float %163, float* %166, align 4
+  %167 = fpext float %139 to double
+  %168 = fmul double 0x3FC8F8B83C69A60D, %167
+  %169 = fpext float %136 to double
+  %170 = fmul double 0x3FEF6297CFF75CB0, %169
+  %171 = fsub double %168, %170
+  %172 = fptrunc double %171 to float
+  %173 = add nsw i32 %i.0, 56
+  %174 = sext i32 %173 to i64
+  %175 = getelementptr inbounds float* %out, i64 %174
+  store float %172, float* %175, align 4
+  br label %176
+
+HEAD: 
+; <label>:1                                       ; preds = %176, %0
+  %i.0 = phi i32 [ 0, %0 ], [ %177, %176 ]
+  %2 = icmp slt i32 %i.0, 8
+  br i1 %2, label %3, label %178
+
+inst:   %4 = mul nsw i32 8, %i.0
+moveInst:   %4 = mul nsw i32 8, %i.0
+Clone:   %4 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %3, label %178
+insert done:   %3 = mul nsw i32 8, %i.0
+	User before:   %6 = add nsw i32 %5, 0
+	User after:   %6 = add nsw i32 %3, 0
+replace done
+inst:   %6 = add nsw i32 %3, 0
+moveInst:   %6 = add nsw i32 %3, 0
+Clone:   %6 = add nsw i32 %3, 0
+To:   br i1 %2, label %4, label %179
+insert done:   %4 = add nsw i32 %3, 0
+	User before:   %8 = sext i32 %7 to i64
+	User after:   %8 = sext i32 %4 to i64
+replace done
+inst:   %8 = sext i32 %4 to i64
+moveInst:   %8 = sext i32 %4 to i64
+Clone:   %8 = sext i32 %4 to i64
+To:   br i1 %2, label %5, label %180
+insert done:   %5 = sext i32 %4 to i64
+	User before:   %10 = getelementptr inbounds float* %in, i64 %9
+	User after:   %10 = getelementptr inbounds float* %in, i64 %5
+replace done
+inst:   %10 = getelementptr inbounds float* %in, i64 %5
+moveInst:   %10 = getelementptr inbounds float* %in, i64 %5
+Clone:   %10 = getelementptr inbounds float* %in, i64 %5
+To:   br i1 %2, label %6, label %181
+insert done:   %6 = getelementptr inbounds float* %in, i64 %5
+	User before:   %12 = load float* %11, align 4
+	User after:   %12 = load float* %6, align 4
+replace done
+inst:   %12 = load float* %6, align 4
+moveInst:   %12 = load float* %6, align 4
+Clone:   %12 = load float* %6, align 4
+To:   br i1 %2, label %7, label %182
+insert done:   %7 = load float* %6, align 4
+	User before:   %19 = fadd float %13, %18
+	User after:   %19 = fadd float %7, %18
+replace done
+inst:   %14 = mul nsw i32 8, %i.0
+moveInst:   %14 = mul nsw i32 8, %i.0
+Clone:   %14 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %8, label %183
+insert done:   %8 = mul nsw i32 8, %i.0
+	User before:   %16 = add nsw i32 %15, 7
+	User after:   %16 = add nsw i32 %8, 7
+replace done
+inst:   %16 = add nsw i32 %8, 7
+moveInst:   %16 = add nsw i32 %8, 7
+Clone:   %16 = add nsw i32 %8, 7
+To:   br i1 %2, label %9, label %184
+insert done:   %9 = add nsw i32 %8, 7
+	User before:   %18 = sext i32 %17 to i64
+	User after:   %18 = sext i32 %9 to i64
+replace done
+inst:   %18 = sext i32 %9 to i64
+moveInst:   %18 = sext i32 %9 to i64
+Clone:   %18 = sext i32 %9 to i64
+To:   br i1 %2, label %10, label %185
+insert done:   %10 = sext i32 %9 to i64
+	User before:   %20 = getelementptr inbounds float* %in, i64 %19
+	User after:   %20 = getelementptr inbounds float* %in, i64 %10
+replace done
+inst:   %20 = getelementptr inbounds float* %in, i64 %10
+moveInst:   %20 = getelementptr inbounds float* %in, i64 %10
+Clone:   %20 = getelementptr inbounds float* %in, i64 %10
+To:   br i1 %2, label %11, label %186
+insert done:   %11 = getelementptr inbounds float* %in, i64 %10
+	User before:   %22 = load float* %21, align 4
+	User after:   %22 = load float* %11, align 4
+replace done
+inst:   %22 = load float* %11, align 4
+moveInst:   %22 = load float* %11, align 4
+Clone:   %22 = load float* %11, align 4
+To:   br i1 %2, label %12, label %187
+insert done:   %12 = load float* %11, align 4
+	User before:   %24 = fadd float %7, %23
+	User after:   %24 = fadd float %7, %12
+replace done
+inst:   %24 = fadd float %7, %12
+moveInst:   %24 = fadd float %7, %12
+Clone:   %24 = fadd float %7, %12
+To:   br i1 %2, label %13, label %188
+insert done:   %13 = fadd float %7, %12
+	User before:   %103 = fadd float %25, %58
+	User after:   %103 = fadd float %13, %58
+replace done
+inst:   %26 = mul nsw i32 8, %i.0
+moveInst:   %26 = mul nsw i32 8, %i.0
+Clone:   %26 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %14, label %189
+insert done:   %14 = mul nsw i32 8, %i.0
+	User before:   %28 = add nsw i32 %27, 1
+	User after:   %28 = add nsw i32 %14, 1
+replace done
+inst:   %28 = add nsw i32 %14, 1
+moveInst:   %28 = add nsw i32 %14, 1
+Clone:   %28 = add nsw i32 %14, 1
+To:   br i1 %2, label %15, label %190
+insert done:   %15 = add nsw i32 %14, 1
+	User before:   %30 = sext i32 %29 to i64
+	User after:   %30 = sext i32 %15 to i64
+replace done
+inst:   %30 = sext i32 %15 to i64
+moveInst:   %30 = sext i32 %15 to i64
+Clone:   %30 = sext i32 %15 to i64
+To:   br i1 %2, label %16, label %191
+insert done:   %16 = sext i32 %15 to i64
+	User before:   %32 = getelementptr inbounds float* %in, i64 %31
+	User after:   %32 = getelementptr inbounds float* %in, i64 %16
+replace done
+inst:   %32 = getelementptr inbounds float* %in, i64 %16
+moveInst:   %32 = getelementptr inbounds float* %in, i64 %16
+Clone:   %32 = getelementptr inbounds float* %in, i64 %16
+To:   br i1 %2, label %17, label %192
+insert done:   %17 = getelementptr inbounds float* %in, i64 %16
+	User before:   %34 = load float* %33, align 4
+	User after:   %34 = load float* %17, align 4
+replace done
+inst:   %34 = load float* %17, align 4
+moveInst:   %34 = load float* %17, align 4
+Clone:   %34 = load float* %17, align 4
+To:   br i1 %2, label %18, label %193
+insert done:   %18 = load float* %17, align 4
+	User before:   %41 = fadd float %35, %40
+	User after:   %41 = fadd float %18, %40
+replace done
+inst:   %36 = mul nsw i32 8, %i.0
+moveInst:   %36 = mul nsw i32 8, %i.0
+Clone:   %36 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %19, label %194
+insert done:   %19 = mul nsw i32 8, %i.0
+	User before:   %38 = add nsw i32 %37, 6
+	User after:   %38 = add nsw i32 %19, 6
+replace done
+inst:   %38 = add nsw i32 %19, 6
+moveInst:   %38 = add nsw i32 %19, 6
+Clone:   %38 = add nsw i32 %19, 6
+To:   br i1 %2, label %20, label %195
+insert done:   %20 = add nsw i32 %19, 6
+	User before:   %40 = sext i32 %39 to i64
+	User after:   %40 = sext i32 %20 to i64
+replace done
+inst:   %40 = sext i32 %20 to i64
+moveInst:   %40 = sext i32 %20 to i64
+Clone:   %40 = sext i32 %20 to i64
+To:   br i1 %2, label %21, label %196
+insert done:   %21 = sext i32 %20 to i64
+	User before:   %42 = getelementptr inbounds float* %in, i64 %41
+	User after:   %42 = getelementptr inbounds float* %in, i64 %21
+replace done
+inst:   %42 = getelementptr inbounds float* %in, i64 %21
+moveInst:   %42 = getelementptr inbounds float* %in, i64 %21
+Clone:   %42 = getelementptr inbounds float* %in, i64 %21
+To:   br i1 %2, label %22, label %197
+insert done:   %22 = getelementptr inbounds float* %in, i64 %21
+	User before:   %44 = load float* %43, align 4
+	User after:   %44 = load float* %22, align 4
+replace done
+inst:   %44 = load float* %22, align 4
+moveInst:   %44 = load float* %22, align 4
+Clone:   %44 = load float* %22, align 4
+To:   br i1 %2, label %23, label %198
+insert done:   %23 = load float* %22, align 4
+	User before:   %46 = fadd float %18, %45
+	User after:   %46 = fadd float %18, %23
+replace done
+inst:   %46 = fadd float %18, %23
+moveInst:   %46 = fadd float %18, %23
+Clone:   %46 = fadd float %18, %23
+To:   br i1 %2, label %24, label %199
+insert done:   %24 = fadd float %18, %23
+	User before:   %115 = fadd float %47, %58
+	User after:   %115 = fadd float %24, %58
+replace done
+inst:   %48 = mul nsw i32 8, %i.0
+moveInst:   %48 = mul nsw i32 8, %i.0
+Clone:   %48 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %25, label %200
+insert done:   %25 = mul nsw i32 8, %i.0
+	User before:   %50 = add nsw i32 %49, 2
+	User after:   %50 = add nsw i32 %25, 2
+replace done
+inst:   %50 = add nsw i32 %25, 2
+moveInst:   %50 = add nsw i32 %25, 2
+Clone:   %50 = add nsw i32 %25, 2
+To:   br i1 %2, label %26, label %201
+insert done:   %26 = add nsw i32 %25, 2
+	User before:   %52 = sext i32 %51 to i64
+	User after:   %52 = sext i32 %26 to i64
+replace done
+inst:   %52 = sext i32 %26 to i64
+moveInst:   %52 = sext i32 %26 to i64
+Clone:   %52 = sext i32 %26 to i64
+To:   br i1 %2, label %27, label %202
+insert done:   %27 = sext i32 %26 to i64
+	User before:   %54 = getelementptr inbounds float* %in, i64 %53
+	User after:   %54 = getelementptr inbounds float* %in, i64 %27
+replace done
+inst:   %54 = getelementptr inbounds float* %in, i64 %27
+moveInst:   %54 = getelementptr inbounds float* %in, i64 %27
+Clone:   %54 = getelementptr inbounds float* %in, i64 %27
+To:   br i1 %2, label %28, label %203
+insert done:   %28 = getelementptr inbounds float* %in, i64 %27
+	User before:   %56 = load float* %55, align 4
+	User after:   %56 = load float* %28, align 4
+replace done
+inst:   %56 = load float* %28, align 4
+moveInst:   %56 = load float* %28, align 4
+Clone:   %56 = load float* %28, align 4
+To:   br i1 %2, label %29, label %204
+insert done:   %29 = load float* %28, align 4
+	User before:   %63 = fadd float %57, %62
+	User after:   %63 = fadd float %29, %62
+replace done
+inst:   %58 = mul nsw i32 8, %i.0
+moveInst:   %58 = mul nsw i32 8, %i.0
+Clone:   %58 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %30, label %205
+insert done:   %30 = mul nsw i32 8, %i.0
+	User before:   %60 = add nsw i32 %59, 5
+	User after:   %60 = add nsw i32 %30, 5
+replace done
+inst:   %60 = add nsw i32 %30, 5
+moveInst:   %60 = add nsw i32 %30, 5
+Clone:   %60 = add nsw i32 %30, 5
+To:   br i1 %2, label %31, label %206
+insert done:   %31 = add nsw i32 %30, 5
+	User before:   %62 = sext i32 %61 to i64
+	User after:   %62 = sext i32 %31 to i64
+replace done
+inst:   %62 = sext i32 %31 to i64
+moveInst:   %62 = sext i32 %31 to i64
+Clone:   %62 = sext i32 %31 to i64
+To:   br i1 %2, label %32, label %207
+insert done:   %32 = sext i32 %31 to i64
+	User before:   %64 = getelementptr inbounds float* %in, i64 %63
+	User after:   %64 = getelementptr inbounds float* %in, i64 %32
+replace done
+inst:   %64 = getelementptr inbounds float* %in, i64 %32
+moveInst:   %64 = getelementptr inbounds float* %in, i64 %32
+Clone:   %64 = getelementptr inbounds float* %in, i64 %32
+To:   br i1 %2, label %33, label %208
+insert done:   %33 = getelementptr inbounds float* %in, i64 %32
+	User before:   %66 = load float* %65, align 4
+	User after:   %66 = load float* %33, align 4
+replace done
+inst:   %66 = load float* %33, align 4
+moveInst:   %66 = load float* %33, align 4
+Clone:   %66 = load float* %33, align 4
+To:   br i1 %2, label %34, label %209
+insert done:   %34 = load float* %33, align 4
+	User before:   %68 = fadd float %29, %67
+	User after:   %68 = fadd float %29, %34
+replace done
+inst:   %68 = fadd float %29, %34
+moveInst:   %68 = fadd float %29, %34
+Clone:   %68 = fadd float %29, %34
+To:   br i1 %2, label %35, label %210
+insert done:   %35 = fadd float %29, %34
+	User before:   %126 = fadd float %24, %69
+	User after:   %126 = fadd float %24, %35
+replace done
+inst:   %70 = mul nsw i32 8, %i.0
+moveInst:   %70 = mul nsw i32 8, %i.0
+Clone:   %70 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %36, label %211
+insert done:   %36 = mul nsw i32 8, %i.0
+	User before:   %72 = add nsw i32 %71, 3
+	User after:   %72 = add nsw i32 %36, 3
+replace done
+inst:   %72 = add nsw i32 %36, 3
+moveInst:   %72 = add nsw i32 %36, 3
+Clone:   %72 = add nsw i32 %36, 3
+To:   br i1 %2, label %37, label %212
+insert done:   %37 = add nsw i32 %36, 3
+	User before:   %74 = sext i32 %73 to i64
+	User after:   %74 = sext i32 %37 to i64
+replace done
+inst:   %74 = sext i32 %37 to i64
+moveInst:   %74 = sext i32 %37 to i64
+Clone:   %74 = sext i32 %37 to i64
+To:   br i1 %2, label %38, label %213
+insert done:   %38 = sext i32 %37 to i64
+	User before:   %76 = getelementptr inbounds float* %in, i64 %75
+	User after:   %76 = getelementptr inbounds float* %in, i64 %38
+replace done
+inst:   %76 = getelementptr inbounds float* %in, i64 %38
+moveInst:   %76 = getelementptr inbounds float* %in, i64 %38
+Clone:   %76 = getelementptr inbounds float* %in, i64 %38
+To:   br i1 %2, label %39, label %214
+insert done:   %39 = getelementptr inbounds float* %in, i64 %38
+	User before:   %78 = load float* %77, align 4
+	User after:   %78 = load float* %39, align 4
+replace done
+inst:   %78 = load float* %39, align 4
+moveInst:   %78 = load float* %39, align 4
+Clone:   %78 = load float* %39, align 4
+To:   br i1 %2, label %40, label %215
+insert done:   %40 = load float* %39, align 4
+	User before:   %85 = fadd float %79, %84
+	User after:   %85 = fadd float %40, %84
+replace done
+inst:   %80 = mul nsw i32 8, %i.0
+moveInst:   %80 = mul nsw i32 8, %i.0
+Clone:   %80 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %41, label %216
+insert done:   %41 = mul nsw i32 8, %i.0
+	User before:   %82 = add nsw i32 %81, 4
+	User after:   %82 = add nsw i32 %41, 4
+replace done
+inst:   %82 = add nsw i32 %41, 4
+moveInst:   %82 = add nsw i32 %41, 4
+Clone:   %82 = add nsw i32 %41, 4
+To:   br i1 %2, label %42, label %217
+insert done:   %42 = add nsw i32 %41, 4
+	User before:   %84 = sext i32 %83 to i64
+	User after:   %84 = sext i32 %42 to i64
+replace done
+inst:   %84 = sext i32 %42 to i64
+moveInst:   %84 = sext i32 %42 to i64
+Clone:   %84 = sext i32 %42 to i64
+To:   br i1 %2, label %43, label %218
+insert done:   %43 = sext i32 %42 to i64
+	User before:   %86 = getelementptr inbounds float* %in, i64 %85
+	User after:   %86 = getelementptr inbounds float* %in, i64 %43
+replace done
+inst:   %86 = getelementptr inbounds float* %in, i64 %43
+moveInst:   %86 = getelementptr inbounds float* %in, i64 %43
+Clone:   %86 = getelementptr inbounds float* %in, i64 %43
+To:   br i1 %2, label %44, label %219
+insert done:   %44 = getelementptr inbounds float* %in, i64 %43
+	User before:   %88 = load float* %87, align 4
+	User after:   %88 = load float* %44, align 4
+replace done
+inst:   %88 = load float* %44, align 4
+moveInst:   %88 = load float* %44, align 4
+Clone:   %88 = load float* %44, align 4
+To:   br i1 %2, label %45, label %220
+insert done:   %45 = load float* %44, align 4
+	User before:   %90 = fadd float %40, %89
+	User after:   %90 = fadd float %40, %45
+replace done
+inst:   %90 = fadd float %40, %45
+moveInst:   %90 = fadd float %40, %45
+Clone:   %90 = fadd float %40, %45
+To:   br i1 %2, label %46, label %221
+insert done:   %46 = fadd float %40, %45
+	User before:   %136 = fadd float %13, %91
+	User after:   %136 = fadd float %13, %46
+replace done
+inst:   %92 = mul nsw i32 8, %i.0
+moveInst:   %92 = mul nsw i32 8, %i.0
+Clone:   %92 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %47, label %222
+insert done:   %47 = mul nsw i32 8, %i.0
+	User before:   %94 = add nsw i32 %93, 0
+	User after:   %94 = add nsw i32 %47, 0
+replace done
+inst:   %94 = add nsw i32 %47, 0
+moveInst:   %94 = add nsw i32 %47, 0
+Clone:   %94 = add nsw i32 %47, 0
+To:   br i1 %2, label %48, label %223
+insert done:   %48 = add nsw i32 %47, 0
+	User before:   %96 = sext i32 %95 to i64
+	User after:   %96 = sext i32 %48 to i64
+replace done
+inst:   %96 = sext i32 %48 to i64
+moveInst:   %96 = sext i32 %48 to i64
+Clone:   %96 = sext i32 %48 to i64
+To:   br i1 %2, label %49, label %224
+insert done:   %49 = sext i32 %48 to i64
+	User before:   %98 = getelementptr inbounds float* %in, i64 %97
+	User after:   %98 = getelementptr inbounds float* %in, i64 %49
+replace done
+inst:   %98 = getelementptr inbounds float* %in, i64 %49
+moveInst:   %98 = getelementptr inbounds float* %in, i64 %49
+Clone:   %98 = getelementptr inbounds float* %in, i64 %49
+To:   br i1 %2, label %50, label %225
+insert done:   %50 = getelementptr inbounds float* %in, i64 %49
+	User before:   %100 = load float* %99, align 4
+	User after:   %100 = load float* %50, align 4
+replace done
+inst:   %100 = load float* %50, align 4
+moveInst:   %100 = load float* %50, align 4
+Clone:   %100 = load float* %50, align 4
+To:   br i1 %2, label %51, label %226
+insert done:   %51 = load float* %50, align 4
+	User before:   %107 = fsub float %101, %106
+	User after:   %107 = fsub float %51, %106
+replace done
+inst:   %102 = mul nsw i32 8, %i.0
+moveInst:   %102 = mul nsw i32 8, %i.0
+Clone:   %102 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %52, label %227
+insert done:   %52 = mul nsw i32 8, %i.0
+	User before:   %104 = add nsw i32 %103, 7
+	User after:   %104 = add nsw i32 %52, 7
+replace done
+inst:   %104 = add nsw i32 %52, 7
+moveInst:   %104 = add nsw i32 %52, 7
+Clone:   %104 = add nsw i32 %52, 7
+To:   br i1 %2, label %53, label %228
+insert done:   %53 = add nsw i32 %52, 7
+	User before:   %106 = sext i32 %105 to i64
+	User after:   %106 = sext i32 %53 to i64
+replace done
+inst:   %106 = sext i32 %53 to i64
+moveInst:   %106 = sext i32 %53 to i64
+Clone:   %106 = sext i32 %53 to i64
+To:   br i1 %2, label %54, label %229
+insert done:   %54 = sext i32 %53 to i64
+	User before:   %108 = getelementptr inbounds float* %in, i64 %107
+	User after:   %108 = getelementptr inbounds float* %in, i64 %54
+replace done
+inst:   %108 = getelementptr inbounds float* %in, i64 %54
+moveInst:   %108 = getelementptr inbounds float* %in, i64 %54
+Clone:   %108 = getelementptr inbounds float* %in, i64 %54
+To:   br i1 %2, label %55, label %230
+insert done:   %55 = getelementptr inbounds float* %in, i64 %54
+	User before:   %110 = load float* %109, align 4
+	User after:   %110 = load float* %55, align 4
+replace done
+inst:   %110 = load float* %55, align 4
+moveInst:   %110 = load float* %55, align 4
+Clone:   %110 = load float* %55, align 4
+To:   br i1 %2, label %56, label %231
+insert done:   %56 = load float* %55, align 4
+	User before:   %112 = fsub float %51, %111
+	User after:   %112 = fsub float %51, %56
+replace done
+inst:   %112 = fsub float %51, %56
+moveInst:   %112 = fsub float %51, %56
+Clone:   %112 = fsub float %51, %56
+To:   br i1 %2, label %57, label %232
+insert done:   %57 = fsub float %51, %56
+	User before:   %193 = fsub float %113, %190
+	User after:   %193 = fsub float %57, %190
+replace done
+inst:   %114 = mul nsw i32 8, %i.0
+moveInst:   %114 = mul nsw i32 8, %i.0
+Clone:   %114 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %58, label %233
+insert done:   %58 = mul nsw i32 8, %i.0
+	User before:   %116 = add nsw i32 %115, 1
+	User after:   %116 = add nsw i32 %58, 1
+replace done
+inst:   %116 = add nsw i32 %58, 1
+moveInst:   %116 = add nsw i32 %58, 1
+Clone:   %116 = add nsw i32 %58, 1
+To:   br i1 %2, label %59, label %234
+insert done:   %59 = add nsw i32 %58, 1
+	User before:   %118 = sext i32 %117 to i64
+	User after:   %118 = sext i32 %59 to i64
+replace done
+inst:   %118 = sext i32 %59 to i64
+moveInst:   %118 = sext i32 %59 to i64
+Clone:   %118 = sext i32 %59 to i64
+To:   br i1 %2, label %60, label %235
+insert done:   %60 = sext i32 %59 to i64
+	User before:   %120 = getelementptr inbounds float* %in, i64 %119
+	User after:   %120 = getelementptr inbounds float* %in, i64 %60
+replace done
+inst:   %120 = getelementptr inbounds float* %in, i64 %60
+moveInst:   %120 = getelementptr inbounds float* %in, i64 %60
+Clone:   %120 = getelementptr inbounds float* %in, i64 %60
+To:   br i1 %2, label %61, label %236
+insert done:   %61 = getelementptr inbounds float* %in, i64 %60
+	User before:   %122 = load float* %121, align 4
+	User after:   %122 = load float* %61, align 4
+replace done
+inst:   %122 = load float* %61, align 4
+moveInst:   %122 = load float* %61, align 4
+Clone:   %122 = load float* %61, align 4
+To:   br i1 %2, label %62, label %237
+insert done:   %62 = load float* %61, align 4
+	User before:   %129 = fsub float %123, %128
+	User after:   %129 = fsub float %62, %128
+replace done
+inst:   %124 = mul nsw i32 8, %i.0
+moveInst:   %124 = mul nsw i32 8, %i.0
+Clone:   %124 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %63, label %238
+insert done:   %63 = mul nsw i32 8, %i.0
+	User before:   %126 = add nsw i32 %125, 6
+	User after:   %126 = add nsw i32 %63, 6
+replace done
+inst:   %126 = add nsw i32 %63, 6
+moveInst:   %126 = add nsw i32 %63, 6
+Clone:   %126 = add nsw i32 %63, 6
+To:   br i1 %2, label %64, label %239
+insert done:   %64 = add nsw i32 %63, 6
+	User before:   %128 = sext i32 %127 to i64
+	User after:   %128 = sext i32 %64 to i64
+replace done
+inst:   %128 = sext i32 %64 to i64
+moveInst:   %128 = sext i32 %64 to i64
+Clone:   %128 = sext i32 %64 to i64
+To:   br i1 %2, label %65, label %240
+insert done:   %65 = sext i32 %64 to i64
+	User before:   %130 = getelementptr inbounds float* %in, i64 %129
+	User after:   %130 = getelementptr inbounds float* %in, i64 %65
+replace done
+inst:   %130 = getelementptr inbounds float* %in, i64 %65
+moveInst:   %130 = getelementptr inbounds float* %in, i64 %65
+Clone:   %130 = getelementptr inbounds float* %in, i64 %65
+To:   br i1 %2, label %66, label %241
+insert done:   %66 = getelementptr inbounds float* %in, i64 %65
+	User before:   %132 = load float* %131, align 4
+	User after:   %132 = load float* %66, align 4
+replace done
+inst:   %132 = load float* %66, align 4
+moveInst:   %132 = load float* %66, align 4
+Clone:   %132 = load float* %66, align 4
+To:   br i1 %2, label %67, label %242
+insert done:   %67 = load float* %66, align 4
+	User before:   %134 = fsub float %62, %133
+	User after:   %134 = fsub float %62, %67
+replace done
+inst:   %134 = fsub float %62, %67
+moveInst:   %134 = fsub float %62, %67
+Clone:   %134 = fsub float %62, %67
+To:   br i1 %2, label %68, label %243
+insert done:   %68 = fsub float %62, %67
+	User before:   %194 = fsub float %135, %146
+	User after:   %194 = fsub float %68, %146
+replace done
+inst:   %136 = mul nsw i32 8, %i.0
+moveInst:   %136 = mul nsw i32 8, %i.0
+Clone:   %136 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %69, label %244
+insert done:   %69 = mul nsw i32 8, %i.0
+	User before:   %138 = add nsw i32 %137, 2
+	User after:   %138 = add nsw i32 %69, 2
+replace done
+inst:   %138 = add nsw i32 %69, 2
+moveInst:   %138 = add nsw i32 %69, 2
+Clone:   %138 = add nsw i32 %69, 2
+To:   br i1 %2, label %70, label %245
+insert done:   %70 = add nsw i32 %69, 2
+	User before:   %140 = sext i32 %139 to i64
+	User after:   %140 = sext i32 %70 to i64
+replace done
+inst:   %140 = sext i32 %70 to i64
+moveInst:   %140 = sext i32 %70 to i64
+Clone:   %140 = sext i32 %70 to i64
+To:   br i1 %2, label %71, label %246
+insert done:   %71 = sext i32 %70 to i64
+	User before:   %142 = getelementptr inbounds float* %in, i64 %141
+	User after:   %142 = getelementptr inbounds float* %in, i64 %71
+replace done
+inst:   %142 = getelementptr inbounds float* %in, i64 %71
+moveInst:   %142 = getelementptr inbounds float* %in, i64 %71
+Clone:   %142 = getelementptr inbounds float* %in, i64 %71
+To:   br i1 %2, label %72, label %247
+insert done:   %72 = getelementptr inbounds float* %in, i64 %71
+	User before:   %144 = load float* %143, align 4
+	User after:   %144 = load float* %72, align 4
+replace done
+inst:   %144 = load float* %72, align 4
+moveInst:   %144 = load float* %72, align 4
+Clone:   %144 = load float* %72, align 4
+To:   br i1 %2, label %73, label %248
+insert done:   %73 = load float* %72, align 4
+	User before:   %151 = fsub float %145, %150
+	User after:   %151 = fsub float %73, %150
+replace done
+inst:   %146 = mul nsw i32 8, %i.0
+moveInst:   %146 = mul nsw i32 8, %i.0
+Clone:   %146 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %74, label %249
+insert done:   %74 = mul nsw i32 8, %i.0
+	User before:   %148 = add nsw i32 %147, 5
+	User after:   %148 = add nsw i32 %74, 5
+replace done
+inst:   %148 = add nsw i32 %74, 5
+moveInst:   %148 = add nsw i32 %74, 5
+Clone:   %148 = add nsw i32 %74, 5
+To:   br i1 %2, label %75, label %250
+insert done:   %75 = add nsw i32 %74, 5
+	User before:   %150 = sext i32 %149 to i64
+	User after:   %150 = sext i32 %75 to i64
+replace done
+inst:   %150 = sext i32 %75 to i64
+moveInst:   %150 = sext i32 %75 to i64
+Clone:   %150 = sext i32 %75 to i64
+To:   br i1 %2, label %76, label %251
+insert done:   %76 = sext i32 %75 to i64
+	User before:   %152 = getelementptr inbounds float* %in, i64 %151
+	User after:   %152 = getelementptr inbounds float* %in, i64 %76
+replace done
+inst:   %152 = getelementptr inbounds float* %in, i64 %76
+moveInst:   %152 = getelementptr inbounds float* %in, i64 %76
+Clone:   %152 = getelementptr inbounds float* %in, i64 %76
+To:   br i1 %2, label %77, label %252
+insert done:   %77 = getelementptr inbounds float* %in, i64 %76
+	User before:   %154 = load float* %153, align 4
+	User after:   %154 = load float* %77, align 4
+replace done
+inst:   %154 = load float* %77, align 4
+moveInst:   %154 = load float* %77, align 4
+Clone:   %154 = load float* %77, align 4
+To:   br i1 %2, label %78, label %253
+insert done:   %78 = load float* %77, align 4
+	User before:   %156 = fsub float %73, %155
+	User after:   %156 = fsub float %73, %78
+replace done
+inst:   %156 = fsub float %73, %78
+moveInst:   %156 = fsub float %73, %78
+Clone:   %156 = fsub float %73, %78
+To:   br i1 %2, label %79, label %254
+insert done:   %79 = fsub float %73, %78
+	User before:   %205 = fsub float %68, %157
+	User after:   %205 = fsub float %68, %79
+replace done
+inst:   %158 = mul nsw i32 8, %i.0
+moveInst:   %158 = mul nsw i32 8, %i.0
+Clone:   %158 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %80, label %255
+insert done:   %80 = mul nsw i32 8, %i.0
+	User before:   %160 = add nsw i32 %159, 3
+	User after:   %160 = add nsw i32 %80, 3
+replace done
+inst:   %160 = add nsw i32 %80, 3
+moveInst:   %160 = add nsw i32 %80, 3
+Clone:   %160 = add nsw i32 %80, 3
+To:   br i1 %2, label %81, label %256
+insert done:   %81 = add nsw i32 %80, 3
+	User before:   %162 = sext i32 %161 to i64
+	User after:   %162 = sext i32 %81 to i64
+replace done
+inst:   %162 = sext i32 %81 to i64
+moveInst:   %162 = sext i32 %81 to i64
+Clone:   %162 = sext i32 %81 to i64
+To:   br i1 %2, label %82, label %257
+insert done:   %82 = sext i32 %81 to i64
+	User before:   %164 = getelementptr inbounds float* %in, i64 %163
+	User after:   %164 = getelementptr inbounds float* %in, i64 %82
+replace done
+inst:   %164 = getelementptr inbounds float* %in, i64 %82
+moveInst:   %164 = getelementptr inbounds float* %in, i64 %82
+Clone:   %164 = getelementptr inbounds float* %in, i64 %82
+To:   br i1 %2, label %83, label %258
+insert done:   %83 = getelementptr inbounds float* %in, i64 %82
+	User before:   %166 = load float* %165, align 4
+	User after:   %166 = load float* %83, align 4
+replace done
+inst:   %166 = load float* %83, align 4
+moveInst:   %166 = load float* %83, align 4
+Clone:   %166 = load float* %83, align 4
+To:   br i1 %2, label %84, label %259
+insert done:   %84 = load float* %83, align 4
+	User before:   %173 = fsub float %167, %172
+	User after:   %173 = fsub float %84, %172
+replace done
+inst:   %168 = mul nsw i32 8, %i.0
+moveInst:   %168 = mul nsw i32 8, %i.0
+Clone:   %168 = mul nsw i32 8, %i.0
+To:   br i1 %2, label %85, label %260
+insert done:   %85 = mul nsw i32 8, %i.0
+	User before:   %170 = add nsw i32 %169, 4
+	User after:   %170 = add nsw i32 %85, 4
+replace done
+inst:   %170 = add nsw i32 %85, 4
+moveInst:   %170 = add nsw i32 %85, 4
+Clone:   %170 = add nsw i32 %85, 4
+To:   br i1 %2, label %86, label %261
+insert done:   %86 = add nsw i32 %85, 4
+	User before:   %172 = sext i32 %171 to i64
+	User after:   %172 = sext i32 %86 to i64
+replace done
+inst:   %172 = sext i32 %86 to i64
+moveInst:   %172 = sext i32 %86 to i64
+Clone:   %172 = sext i32 %86 to i64
+To:   br i1 %2, label %87, label %262
+insert done:   %87 = sext i32 %86 to i64
+	User before:   %174 = getelementptr inbounds float* %in, i64 %173
+	User after:   %174 = getelementptr inbounds float* %in, i64 %87
+replace done
+inst:   %174 = getelementptr inbounds float* %in, i64 %87
+moveInst:   %174 = getelementptr inbounds float* %in, i64 %87
+Clone:   %174 = getelementptr inbounds float* %in, i64 %87
+To:   br i1 %2, label %88, label %263
+insert done:   %88 = getelementptr inbounds float* %in, i64 %87
+	User before:   %176 = load float* %175, align 4
+	User after:   %176 = load float* %88, align 4
+replace done
+inst:   %176 = load float* %88, align 4
+moveInst:   %176 = load float* %88, align 4
+Clone:   %176 = load float* %88, align 4
+To:   br i1 %2, label %89, label %264
+insert done:   %89 = load float* %88, align 4
+	User before:   %178 = fsub float %84, %177
+	User after:   %178 = fsub float %84, %89
+replace done
+inst:   %178 = fsub float %84, %89
+moveInst:   %178 = fsub float %84, %89
+Clone:   %178 = fsub float %84, %89
+To:   br i1 %2, label %90, label %265
+insert done:   %90 = fsub float %84, %89
+	User before:   %224 = fadd float %179, %219
+	User after:   %224 = fadd float %90, %219
+replace done
+inst:   %180 = fadd float %13, %46
+moveInst:   %180 = fadd float %13, %46
+Clone:   %180 = fadd float %13, %46
+To:   br i1 %2, label %91, label %266
+insert done:   %91 = fadd float %13, %46
+	User before:   %185 = fadd float %181, %182
+	User after:   %185 = fadd float %91, %182
+replace done
+inst:   %182 = fadd float %24, %35
+moveInst:   %182 = fadd float %24, %35
+Clone:   %182 = fadd float %24, %35
+To:   br i1 %2, label %92, label %267
+insert done:   %92 = fadd float %24, %35
+	User before:   %186 = fadd float %91, %183
+	User after:   %186 = fadd float %91, %92
+replace done
+inst:   %184 = fsub float %115, %126
+moveInst:   %184 = fsub float %115, %126
+Clone:   %184 = fsub float %115, %126
+To:   br i1 %2, label %93, label %268
+insert done:   %93 = fsub float %116, %127
+	User before:   %201 = fpext float %185 to double
+	User after:   %201 = fpext float %93 to double
+replace done
+inst:   %186 = fsub float %105, %138
+moveInst:   %186 = fsub float %105, %138
+Clone:   %186 = fsub float %105, %138
+To:   br i1 %2, label %94, label %269
+insert done:   %94 = fsub float %106, %139
+	User before:   %204 = fpext float %187 to double
+	User after:   %204 = fpext float %94 to double
+replace done
+inst:   %188 = fadd float %91, %92
+moveInst:   %188 = fadd float %91, %92
+Clone:   %188 = fadd float %91, %92
+To:   br i1 %2, label %95, label %270
+insert done:   %95 = fadd float %91, %92
+	User before:   %190 = fpext float %189 to double
+	User after:   %190 = fpext float %95 to double
+replace done
+inst:   %190 = fpext float %95 to double
+moveInst:   %190 = fpext float %95 to double
+Clone:   %190 = fpext float %95 to double
+To:   br i1 %2, label %96, label %271
+insert done:   %96 = fpext float %95 to double
+	User before:   %192 = fmul double 0x3FE6A09E667F3BCD, %191
+	User after:   %192 = fmul double 0x3FE6A09E667F3BCD, %96
+replace done
+inst:   %192 = fmul double 0x3FE6A09E667F3BCD, %96
+moveInst:   %192 = fmul double 0x3FE6A09E667F3BCD, %96
+Clone:   %192 = fmul double 0x3FE6A09E667F3BCD, %96
+To:   br i1 %2, label %97, label %272
+insert done:   %97 = fmul double 0x3FE6A09E667F3BCD, %96
+	User before:   %194 = fptrunc double %193 to float
+	User after:   %194 = fptrunc double %97 to float
+replace done
+inst:   %194 = fptrunc double %97 to float
+moveInst:   %194 = fptrunc double %97 to float
+Clone:   %194 = fptrunc double %97 to float
+To:   br i1 %2, label %98, label %273
+insert done:   %98 = fptrunc double %97 to float
+	User before:   store float %195, float* %198, align 4
+	User after:   store float %98, float* %198, align 4
+replace done
+inst:   %196 = add nsw i32 %i.0, 0
+moveInst:   %196 = add nsw i32 %i.0, 0
+Clone:   %196 = add nsw i32 %i.0, 0
+To:   br i1 %2, label %99, label %274
+insert done:   %99 = add nsw i32 %i.0, 0
+	User before:   %198 = sext i32 %197 to i64
+	User after:   %198 = sext i32 %99 to i64
+replace done
+inst:   %198 = sext i32 %99 to i64
+moveInst:   %198 = sext i32 %99 to i64
+Clone:   %198 = sext i32 %99 to i64
+To:   br i1 %2, label %100, label %275
+insert done:   %100 = sext i32 %99 to i64
+	User before:   %200 = getelementptr inbounds float* %out, i64 %199
+	User after:   %200 = getelementptr inbounds float* %out, i64 %100
+replace done
+inst:   %200 = getelementptr inbounds float* %out, i64 %100
+moveInst:   %200 = getelementptr inbounds float* %out, i64 %100
+Clone:   %200 = getelementptr inbounds float* %out, i64 %100
+To:   br i1 %2, label %101, label %276
+insert done:   %101 = getelementptr inbounds float* %out, i64 %100
+	User before:   store float %98, float* %201, align 4
+	User after:   store float %98, float* %101, align 4
+replace done
+inst:   store float %98, float* %101, align 4
+moveInst:   store float %98, float* %101, align 4
+Clone:   store float %98, float* %101, align 4
+To:   br i1 %2, label %102, label %277
+insert done:   store float %.if.sel, float* %101
+replace done
+inst:   %202 = fsub float %191, %192
+moveInst:   %202 = fsub float %191, %192
+Clone:   %202 = fsub float %191, %192
+To:   br i1 %2, label %102, label %277
+insert done:   %102 = fsub float %192, %193
+	User before:   %204 = fpext float %203 to double
+	User after:   %204 = fpext float %102 to double
+replace done
+inst:   %204 = fpext float %102 to double
+moveInst:   %204 = fpext float %102 to double
+Clone:   %204 = fpext float %102 to double
+To:   br i1 %2, label %103, label %278
+insert done:   %103 = fpext float %102 to double
+	User before:   %206 = fmul double 0x3FE6A09E667F3BCD, %205
+	User after:   %206 = fmul double 0x3FE6A09E667F3BCD, %103
+replace done
+inst:   %206 = fmul double 0x3FE6A09E667F3BCD, %103
+moveInst:   %206 = fmul double 0x3FE6A09E667F3BCD, %103
+Clone:   %206 = fmul double 0x3FE6A09E667F3BCD, %103
+To:   br i1 %2, label %104, label %279
+insert done:   %104 = fmul double 0x3FE6A09E667F3BCD, %103
+	User before:   %208 = fptrunc double %207 to float
+	User after:   %208 = fptrunc double %104 to float
+replace done
+inst:   %208 = fptrunc double %104 to float
+moveInst:   %208 = fptrunc double %104 to float
+Clone:   %208 = fptrunc double %104 to float
+To:   br i1 %2, label %105, label %280
+insert done:   %105 = fptrunc double %104 to float
+	User before:   store float %209, float* %212, align 4
+	User after:   store float %105, float* %212, align 4
+replace done
+inst:   %210 = add nsw i32 %i.0, 32
+moveInst:   %210 = add nsw i32 %i.0, 32
+Clone:   %210 = add nsw i32 %i.0, 32
+To:   br i1 %2, label %106, label %281
+insert done:   %106 = add nsw i32 %i.0, 32
+	User before:   %212 = sext i32 %211 to i64
+	User after:   %212 = sext i32 %106 to i64
+replace done
+inst:   %212 = sext i32 %106 to i64
+moveInst:   %212 = sext i32 %106 to i64
+Clone:   %212 = sext i32 %106 to i64
+To:   br i1 %2, label %107, label %282
+insert done:   %107 = sext i32 %106 to i64
+	User before:   %214 = getelementptr inbounds float* %out, i64 %213
+	User after:   %214 = getelementptr inbounds float* %out, i64 %107
+replace done
+inst:   %214 = getelementptr inbounds float* %out, i64 %107
+moveInst:   %214 = getelementptr inbounds float* %out, i64 %107
+Clone:   %214 = getelementptr inbounds float* %out, i64 %107
+To:   br i1 %2, label %108, label %283
+insert done:   %108 = getelementptr inbounds float* %out, i64 %107
+	User before:   store float %105, float* %215, align 4
+	User after:   store float %105, float* %108, align 4
+replace done
+inst:   store float %105, float* %108, align 4
+moveInst:   store float %105, float* %108, align 4
+Clone:   store float %105, float* %108, align 4
+To:   br i1 %2, label %109, label %284
+insert done:   store float %.if.sel2, float* %108
+replace done
+inst:   %216 = fpext float %93 to double
+moveInst:   %216 = fpext float %93 to double
+Clone:   %216 = fpext float %93 to double
+To:   br i1 %2, label %109, label %284
+insert done:   %109 = fpext float %93 to double
+	User before:   %218 = fmul double 0x3FD87DE2A6AEA964, %217
+	User after:   %218 = fmul double 0x3FD87DE2A6AEA964, %109
+replace done
+inst:   %218 = fmul double 0x3FD87DE2A6AEA964, %109
+moveInst:   %218 = fmul double 0x3FD87DE2A6AEA964, %109
+Clone:   %218 = fmul double 0x3FD87DE2A6AEA964, %109
+To:   br i1 %2, label %110, label %285
+insert done:   %110 = fmul double 0x3FD87DE2A6AEA964, %109
+	User before:   %222 = fadd double %219, %221
+	User after:   %222 = fadd double %110, %221
+replace done
+inst:   %220 = fpext float %94 to double
+moveInst:   %220 = fpext float %94 to double
+Clone:   %220 = fpext float %94 to double
+To:   br i1 %2, label %111, label %286
+insert done:   %111 = fpext float %94 to double
+	User before:   %222 = fmul double 0x3FED906BCF328D46, %221
+	User after:   %222 = fmul double 0x3FED906BCF328D46, %111
+replace done
+inst:   %222 = fmul double 0x3FED906BCF328D46, %111
+moveInst:   %222 = fmul double 0x3FED906BCF328D46, %111
+Clone:   %222 = fmul double 0x3FED906BCF328D46, %111
+To:   br i1 %2, label %112, label %287
+insert done:   %112 = fmul double 0x3FED906BCF328D46, %111
+	User before:   %224 = fadd double %110, %223
+	User after:   %224 = fadd double %110, %112
+replace done
+inst:   %224 = fadd double %110, %112
+moveInst:   %224 = fadd double %110, %112
+Clone:   %224 = fadd double %110, %112
+To:   br i1 %2, label %113, label %288
+insert done:   %113 = fadd double %110, %112
+	User before:   %226 = fptrunc double %225 to float
+	User after:   %226 = fptrunc double %113 to float
+replace done
+inst:   %226 = fptrunc double %113 to float
+moveInst:   %226 = fptrunc double %113 to float
+Clone:   %226 = fptrunc double %113 to float
+To:   br i1 %2, label %114, label %289
+insert done:   %114 = fptrunc double %113 to float
+	User before:   store float %227, float* %230, align 4
+	User after:   store float %114, float* %230, align 4
+replace done
+inst:   %228 = add nsw i32 %i.0, 16
+moveInst:   %228 = add nsw i32 %i.0, 16
+Clone:   %228 = add nsw i32 %i.0, 16
+To:   br i1 %2, label %115, label %290
+insert done:   %115 = add nsw i32 %i.0, 16
+	User before:   %230 = sext i32 %229 to i64
+	User after:   %230 = sext i32 %115 to i64
+replace done
+inst:   %230 = sext i32 %115 to i64
+moveInst:   %230 = sext i32 %115 to i64
+Clone:   %230 = sext i32 %115 to i64
+To:   br i1 %2, label %116, label %291
+insert done:   %116 = sext i32 %115 to i64
+	User before:   %232 = getelementptr inbounds float* %out, i64 %231
+	User after:   %232 = getelementptr inbounds float* %out, i64 %116
+replace done
+inst:   %232 = getelementptr inbounds float* %out, i64 %116
+moveInst:   %232 = getelementptr inbounds float* %out, i64 %116
+Clone:   %232 = getelementptr inbounds float* %out, i64 %116
+To:   br i1 %2, label %117, label %292
+insert done:   %117 = getelementptr inbounds float* %out, i64 %116
+	User before:   store float %114, float* %233, align 4
+	User after:   store float %114, float* %117, align 4
+replace done
+inst:   store float %114, float* %117, align 4
+moveInst:   store float %114, float* %117, align 4
+Clone:   store float %114, float* %117, align 4
+To:   br i1 %2, label %118, label %293
+insert done:   store float %.if.sel4, float* %117
+replace done
+inst:   %234 = fpext float %210 to double
+moveInst:   %234 = fpext float %210 to double
+Clone:   %234 = fpext float %210 to double
+To:   br i1 %2, label %118, label %293
+insert done:   %118 = fpext float %211 to double
+	User before:   %236 = fmul double 0x3FD87DE2A6AEA964, %235
+	User after:   %236 = fmul double 0x3FD87DE2A6AEA964, %118
+replace done
+inst:   %236 = fmul double 0x3FD87DE2A6AEA964, %118
+moveInst:   %236 = fmul double 0x3FD87DE2A6AEA964, %118
+Clone:   %236 = fmul double 0x3FD87DE2A6AEA964, %118
+To:   br i1 %2, label %119, label %294
+insert done:   %119 = fmul double 0x3FD87DE2A6AEA964, %118
+	User before:   %240 = fsub double %237, %239
+	User after:   %240 = fsub double %119, %239
+replace done
+inst:   %238 = fpext float %211 to double
+moveInst:   %238 = fpext float %211 to double
+Clone:   %238 = fpext float %211 to double
+To:   br i1 %2, label %120, label %295
+insert done:   %120 = fpext float %212 to double
+	User before:   %240 = fmul double 0x3FED906BCF328D46, %239
+	User after:   %240 = fmul double 0x3FED906BCF328D46, %120
+replace done
+inst:   %240 = fmul double 0x3FED906BCF328D46, %120
+moveInst:   %240 = fmul double 0x3FED906BCF328D46, %120
+Clone:   %240 = fmul double 0x3FED906BCF328D46, %120
+To:   br i1 %2, label %121, label %296
+insert done:   %121 = fmul double 0x3FED906BCF328D46, %120
+	User before:   %242 = fsub double %119, %241
+	User after:   %242 = fsub double %119, %121
+replace done
+inst:   %242 = fsub double %119, %121
+moveInst:   %242 = fsub double %119, %121
+Clone:   %242 = fsub double %119, %121
+To:   br i1 %2, label %122, label %297
+insert done:   %122 = fsub double %119, %121
+	User before:   %244 = fptrunc double %243 to float
+	User after:   %244 = fptrunc double %122 to float
+replace done
+inst:   %244 = fptrunc double %122 to float
+moveInst:   %244 = fptrunc double %122 to float
+Clone:   %244 = fptrunc double %122 to float
+To:   br i1 %2, label %123, label %298
+insert done:   %123 = fptrunc double %122 to float
+	User before:   store float %245, float* %248, align 4
+	User after:   store float %123, float* %248, align 4
+replace done
+inst:   %246 = add nsw i32 %i.0, 48
+moveInst:   %246 = add nsw i32 %i.0, 48
+Clone:   %246 = add nsw i32 %i.0, 48
+To:   br i1 %2, label %124, label %299
+insert done:   %124 = add nsw i32 %i.0, 48
+	User before:   %248 = sext i32 %247 to i64
+	User after:   %248 = sext i32 %124 to i64
+replace done
+inst:   %248 = sext i32 %124 to i64
+moveInst:   %248 = sext i32 %124 to i64
+Clone:   %248 = sext i32 %124 to i64
+To:   br i1 %2, label %125, label %300
+insert done:   %125 = sext i32 %124 to i64
+	User before:   %250 = getelementptr inbounds float* %out, i64 %249
+	User after:   %250 = getelementptr inbounds float* %out, i64 %125
+replace done
+inst:   %250 = getelementptr inbounds float* %out, i64 %125
+moveInst:   %250 = getelementptr inbounds float* %out, i64 %125
+Clone:   %250 = getelementptr inbounds float* %out, i64 %125
+To:   br i1 %2, label %126, label %301
+insert done:   %126 = getelementptr inbounds float* %out, i64 %125
+	User before:   store float %123, float* %251, align 4
+	User after:   store float %123, float* %126, align 4
+replace done
+inst:   store float %123, float* %126, align 4
+moveInst:   store float %123, float* %126, align 4
+Clone:   store float %123, float* %126, align 4
+To:   br i1 %2, label %127, label %302
+insert done:   store float %.if.sel6, float* %126
+replace done
+inst:   %252 = fsub float %68, %79
+moveInst:   %252 = fsub float %68, %79
+Clone:   %252 = fsub float %68, %79
+To:   br i1 %2, label %127, label %302
+insert done:   %127 = fsub float %68, %79
+	User before:   %254 = fpext float %253 to double
+	User after:   %254 = fpext float %127 to double
+replace done
+inst:   %254 = fpext float %127 to double
+moveInst:   %254 = fpext float %127 to double
+Clone:   %254 = fpext float %127 to double
+To:   br i1 %2, label %128, label %303
+insert done:   %128 = fpext float %127 to double
+	User before:   %256 = fmul double 0x3FE6A09E667F3BCD, %255
+	User after:   %256 = fmul double 0x3FE6A09E667F3BCD, %128
+replace done
+inst:   %256 = fmul double 0x3FE6A09E667F3BCD, %128
+moveInst:   %256 = fmul double 0x3FE6A09E667F3BCD, %128
+Clone:   %256 = fmul double 0x3FE6A09E667F3BCD, %128
+To:   br i1 %2, label %129, label %304
+insert done:   %129 = fmul double 0x3FE6A09E667F3BCD, %128
+	User before:   %258 = fptrunc double %257 to float
+	User after:   %258 = fptrunc double %129 to float
+replace done
+inst:   %258 = fptrunc double %129 to float
+moveInst:   %258 = fptrunc double %129 to float
+Clone:   %258 = fptrunc double %129 to float
+To:   br i1 %2, label %130, label %305
+insert done:   %130 = fptrunc double %129 to float
+	User before:   %264 = fadd float %90, %259
+	User after:   %264 = fadd float %90, %130
+replace done
+inst:   %260 = fadd float %197, %208
+moveInst:   %260 = fadd float %197, %208
+Clone:   %260 = fadd float %197, %208
+To:   br i1 %2, label %131, label %306
+insert done:   %131 = fadd float %198, %209
+	User before:   %262 = fpext float %261 to double
+	User after:   %262 = fpext float %131 to double
+replace done
+inst:   %262 = fpext float %131 to double
+moveInst:   %262 = fpext float %131 to double
+Clone:   %262 = fpext float %131 to double
+To:   br i1 %2, label %132, label %307
+insert done:   %132 = fpext float %131 to double
+	User before:   %264 = fmul double 0x3FE6A09E667F3BCD, %263
+	User after:   %264 = fmul double 0x3FE6A09E667F3BCD, %132
+replace done
+inst:   %264 = fmul double 0x3FE6A09E667F3BCD, %132
+moveInst:   %264 = fmul double 0x3FE6A09E667F3BCD, %132
+Clone:   %264 = fmul double 0x3FE6A09E667F3BCD, %132
+To:   br i1 %2, label %133, label %308
+insert done:   %133 = fmul double 0x3FE6A09E667F3BCD, %132
+	User before:   %266 = fptrunc double %265 to float
+	User after:   %266 = fptrunc double %133 to float
+replace done
+inst:   %266 = fptrunc double %133 to float
+moveInst:   %266 = fptrunc double %133 to float
+Clone:   %266 = fptrunc double %133 to float
+To:   br i1 %2, label %134, label %309
+insert done:   %134 = fptrunc double %133 to float
+	User before:   %270 = fsub float %57, %267
+	User after:   %270 = fsub float %57, %134
+replace done
+inst:   %268 = fadd float %90, %130
+moveInst:   %268 = fadd float %90, %130
+Clone:   %268 = fadd float %90, %130
+To:   br i1 %2, label %135, label %310
+insert done:   %135 = fadd float %90, %130
+	User before:   %273 = fpext float %269 to double
+	User after:   %273 = fpext float %135 to double
+replace done
+inst:   %270 = fsub float %224, %264
+moveInst:   %270 = fsub float %224, %264
+Clone:   %270 = fsub float %224, %264
+To:   br i1 %2, label %136, label %311
+insert done:   %136 = fsub float %225, %265
+	User before:   %285 = fpext float %271 to double
+	User after:   %285 = fpext float %136 to double
+replace done
+inst:   %272 = fsub float %57, %134
+moveInst:   %272 = fsub float %57, %134
+Clone:   %272 = fsub float %57, %134
+To:   br i1 %2, label %137, label %312
+insert done:   %137 = fsub float %57, %134
+	User before:   %284 = fpext float %273 to double
+	User after:   %284 = fpext float %137 to double
+replace done
+inst:   %274 = fadd float %193, %270
+moveInst:   %274 = fadd float %193, %270
+Clone:   %274 = fadd float %193, %270
+To:   br i1 %2, label %138, label %313
+insert done:   %138 = fadd float %194, %271
+	User before:   %278 = fpext float %275 to double
+	User after:   %278 = fpext float %138 to double
+replace done
+inst:   %276 = fpext float %135 to double
+moveInst:   %276 = fpext float %135 to double
+Clone:   %276 = fpext float %135 to double
+To:   br i1 %2, label %139, label %314
+insert done:   %139 = fpext float %135 to double
+	User before:   %278 = fmul double 0x3FC8F8B83C69A60D, %277
+	User after:   %278 = fmul double 0x3FC8F8B83C69A60D, %139
+replace done
+inst:   %278 = fmul double 0x3FC8F8B83C69A60D, %139
+moveInst:   %278 = fmul double 0x3FC8F8B83C69A60D, %139
+Clone:   %278 = fmul double 0x3FC8F8B83C69A60D, %139
+To:   br i1 %2, label %140, label %315
+insert done:   %140 = fmul double 0x3FC8F8B83C69A60D, %139
+	User before:   %282 = fadd double %279, %281
+	User after:   %282 = fadd double %140, %281
+replace done
+inst:   %280 = fpext float %138 to double
+moveInst:   %280 = fpext float %138 to double
+Clone:   %280 = fpext float %138 to double
+To:   br i1 %2, label %141, label %316
+insert done:   %141 = fpext float %138 to double
+	User before:   %282 = fmul double 0x3FEF6297CFF75CB0, %281
+	User after:   %282 = fmul double 0x3FEF6297CFF75CB0, %141
+replace done
+inst:   %282 = fmul double 0x3FEF6297CFF75CB0, %141
+moveInst:   %282 = fmul double 0x3FEF6297CFF75CB0, %141
+Clone:   %282 = fmul double 0x3FEF6297CFF75CB0, %141
+To:   br i1 %2, label %142, label %317
+insert done:   %142 = fmul double 0x3FEF6297CFF75CB0, %141
+	User before:   %284 = fadd double %140, %283
+	User after:   %284 = fadd double %140, %142
+replace done
+inst:   %284 = fadd double %140, %142
+moveInst:   %284 = fadd double %140, %142
+Clone:   %284 = fadd double %140, %142
+To:   br i1 %2, label %143, label %318
+insert done:   %143 = fadd double %140, %142
+	User before:   %286 = fptrunc double %285 to float
+	User after:   %286 = fptrunc double %143 to float
+replace done
+inst:   %286 = fptrunc double %143 to float
+moveInst:   %286 = fptrunc double %143 to float
+Clone:   %286 = fptrunc double %143 to float
+To:   br i1 %2, label %144, label %319
+insert done:   %144 = fptrunc double %143 to float
+	User before:   store float %287, float* %290, align 4
+	User after:   store float %144, float* %290, align 4
+replace done
+inst:   %288 = add nsw i32 %i.0, 8
+moveInst:   %288 = add nsw i32 %i.0, 8
+Clone:   %288 = add nsw i32 %i.0, 8
+To:   br i1 %2, label %145, label %320
+insert done:   %145 = add nsw i32 %i.0, 8
+	User before:   %290 = sext i32 %289 to i64
+	User after:   %290 = sext i32 %145 to i64
+replace done
+inst:   %290 = sext i32 %145 to i64
+moveInst:   %290 = sext i32 %145 to i64
+Clone:   %290 = sext i32 %145 to i64
+To:   br i1 %2, label %146, label %321
+insert done:   %146 = sext i32 %145 to i64
+	User before:   %292 = getelementptr inbounds float* %out, i64 %291
+	User after:   %292 = getelementptr inbounds float* %out, i64 %146
+replace done
+inst:   %292 = getelementptr inbounds float* %out, i64 %146
+moveInst:   %292 = getelementptr inbounds float* %out, i64 %146
+Clone:   %292 = getelementptr inbounds float* %out, i64 %146
+To:   br i1 %2, label %147, label %322
+insert done:   %147 = getelementptr inbounds float* %out, i64 %146
+	User before:   store float %144, float* %293, align 4
+	User after:   store float %144, float* %147, align 4
+replace done
+inst:   store float %144, float* %147, align 4
+moveInst:   store float %144, float* %147, align 4
+Clone:   store float %144, float* %147, align 4
+To:   br i1 %2, label %148, label %323
+insert done:   store float %.if.sel8, float* %147
+replace done
+inst:   %294 = fpext float %137 to double
+moveInst:   %294 = fpext float %137 to double
+Clone:   %294 = fpext float %137 to double
+To:   br i1 %2, label %148, label %323
+insert done:   %148 = fpext float %137 to double
+	User before:   %296 = fmul double 0x3FEA9B66290EA1A3, %295
+	User after:   %296 = fmul double 0x3FEA9B66290EA1A3, %148
+replace done
+inst:   %296 = fmul double 0x3FEA9B66290EA1A3, %148
+moveInst:   %296 = fmul double 0x3FEA9B66290EA1A3, %148
+Clone:   %296 = fmul double 0x3FEA9B66290EA1A3, %148
+To:   br i1 %2, label %149, label %324
+insert done:   %149 = fmul double 0x3FEA9B66290EA1A3, %148
+	User before:   %300 = fsub double %297, %299
+	User after:   %300 = fsub double %149, %299
+replace done
+inst:   %298 = fpext float %136 to double
+moveInst:   %298 = fpext float %136 to double
+Clone:   %298 = fpext float %136 to double
+To:   br i1 %2, label %150, label %325
+insert done:   %150 = fpext float %136 to double
+	User before:   %300 = fmul double 0x3FE1C73B39AE68C9, %299
+	User after:   %300 = fmul double 0x3FE1C73B39AE68C9, %150
+replace done
+inst:   %300 = fmul double 0x3FE1C73B39AE68C9, %150
+moveInst:   %300 = fmul double 0x3FE1C73B39AE68C9, %150
+Clone:   %300 = fmul double 0x3FE1C73B39AE68C9, %150
+To:   br i1 %2, label %151, label %326
+insert done:   %151 = fmul double 0x3FE1C73B39AE68C9, %150
+	User before:   %302 = fsub double %149, %301
+	User after:   %302 = fsub double %149, %151
+replace done
+inst:   %302 = fsub double %149, %151
+moveInst:   %302 = fsub double %149, %151
+Clone:   %302 = fsub double %149, %151
+To:   br i1 %2, label %152, label %327
+insert done:   %152 = fsub double %149, %151
+	User before:   %304 = fptrunc double %303 to float
+	User after:   %304 = fptrunc double %152 to float
+replace done
+inst:   %304 = fptrunc double %152 to float
+moveInst:   %304 = fptrunc double %152 to float
+Clone:   %304 = fptrunc double %152 to float
+To:   br i1 %2, label %153, label %328
+insert done:   %153 = fptrunc double %152 to float
+	User before:   store float %305, float* %308, align 4
+	User after:   store float %153, float* %308, align 4
+replace done
+inst:   %306 = add nsw i32 %i.0, 24
+moveInst:   %306 = add nsw i32 %i.0, 24
+Clone:   %306 = add nsw i32 %i.0, 24
+To:   br i1 %2, label %154, label %329
+insert done:   %154 = add nsw i32 %i.0, 24
+	User before:   %308 = sext i32 %307 to i64
+	User after:   %308 = sext i32 %154 to i64
+replace done
+inst:   %308 = sext i32 %154 to i64
+moveInst:   %308 = sext i32 %154 to i64
+Clone:   %308 = sext i32 %154 to i64
+To:   br i1 %2, label %155, label %330
+insert done:   %155 = sext i32 %154 to i64
+	User before:   %310 = getelementptr inbounds float* %out, i64 %309
+	User after:   %310 = getelementptr inbounds float* %out, i64 %155
+replace done
+inst:   %310 = getelementptr inbounds float* %out, i64 %155
+moveInst:   %310 = getelementptr inbounds float* %out, i64 %155
+Clone:   %310 = getelementptr inbounds float* %out, i64 %155
+To:   br i1 %2, label %156, label %331
+insert done:   %156 = getelementptr inbounds float* %out, i64 %155
+	User before:   store float %153, float* %311, align 4
+	User after:   store float %153, float* %156, align 4
+replace done
+inst:   store float %153, float* %156, align 4
+moveInst:   store float %153, float* %156, align 4
+Clone:   store float %153, float* %156, align 4
+To:   br i1 %2, label %157, label %332
+insert done:   store float %.if.sel10, float* %156
+replace done
+inst:   %312 = fpext float %291 to double
+moveInst:   %312 = fpext float %291 to double
+Clone:   %312 = fpext float %291 to double
+To:   br i1 %2, label %157, label %332
+insert done:   %157 = fpext float %292 to double
+	User before:   %314 = fmul double 0x3FEA9B66290EA1A3, %313
+	User after:   %314 = fmul double 0x3FEA9B66290EA1A3, %157
+replace done
+inst:   %314 = fmul double 0x3FEA9B66290EA1A3, %157
+moveInst:   %314 = fmul double 0x3FEA9B66290EA1A3, %157
+Clone:   %314 = fmul double 0x3FEA9B66290EA1A3, %157
+To:   br i1 %2, label %158, label %333
+insert done:   %158 = fmul double 0x3FEA9B66290EA1A3, %157
+	User before:   %318 = fadd double %315, %317
+	User after:   %318 = fadd double %158, %317
+replace done
+inst:   %316 = fpext float %294 to double
+moveInst:   %316 = fpext float %294 to double
+Clone:   %316 = fpext float %294 to double
+To:   br i1 %2, label %159, label %334
+insert done:   %159 = fpext float %295 to double
+	User before:   %318 = fmul double 0x3FE1C73B39AE68C9, %317
+	User after:   %318 = fmul double 0x3FE1C73B39AE68C9, %159
+replace done
+inst:   %318 = fmul double 0x3FE1C73B39AE68C9, %159
+moveInst:   %318 = fmul double 0x3FE1C73B39AE68C9, %159
+Clone:   %318 = fmul double 0x3FE1C73B39AE68C9, %159
+To:   br i1 %2, label %160, label %335
+insert done:   %160 = fmul double 0x3FE1C73B39AE68C9, %159
+	User before:   %320 = fadd double %158, %319
+	User after:   %320 = fadd double %158, %160
+replace done
+inst:   %320 = fadd double %158, %160
+moveInst:   %320 = fadd double %158, %160
+Clone:   %320 = fadd double %158, %160
+To:   br i1 %2, label %161, label %336
+insert done:   %161 = fadd double %158, %160
+	User before:   %322 = fptrunc double %321 to float
+	User after:   %322 = fptrunc double %161 to float
+replace done
+inst:   %322 = fptrunc double %161 to float
+moveInst:   %322 = fptrunc double %161 to float
+Clone:   %322 = fptrunc double %161 to float
+To:   br i1 %2, label %162, label %337
+insert done:   %162 = fptrunc double %161 to float
+	User before:   store float %323, float* %326, align 4
+	User after:   store float %162, float* %326, align 4
+replace done
+inst:   %324 = add nsw i32 %i.0, 40
+moveInst:   %324 = add nsw i32 %i.0, 40
+Clone:   %324 = add nsw i32 %i.0, 40
+To:   br i1 %2, label %163, label %338
+insert done:   %163 = add nsw i32 %i.0, 40
+	User before:   %326 = sext i32 %325 to i64
+	User after:   %326 = sext i32 %163 to i64
+replace done
+inst:   %326 = sext i32 %163 to i64
+moveInst:   %326 = sext i32 %163 to i64
+Clone:   %326 = sext i32 %163 to i64
+To:   br i1 %2, label %164, label %339
+insert done:   %164 = sext i32 %163 to i64
+	User before:   %328 = getelementptr inbounds float* %out, i64 %327
+	User after:   %328 = getelementptr inbounds float* %out, i64 %164
+replace done
+inst:   %328 = getelementptr inbounds float* %out, i64 %164
+moveInst:   %328 = getelementptr inbounds float* %out, i64 %164
+Clone:   %328 = getelementptr inbounds float* %out, i64 %164
+To:   br i1 %2, label %165, label %340
+insert done:   %165 = getelementptr inbounds float* %out, i64 %164
+	User before:   store float %162, float* %329, align 4
+	User after:   store float %162, float* %165, align 4
+replace done
+inst:   store float %162, float* %165, align 4
+moveInst:   store float %162, float* %165, align 4
+Clone:   store float %162, float* %165, align 4
+To:   br i1 %2, label %166, label %341
+insert done:   store float %.if.sel12, float* %165
+replace done
+inst:   %330 = fpext float %302 to double
+moveInst:   %330 = fpext float %302 to double
+Clone:   %330 = fpext float %302 to double
+To:   br i1 %2, label %166, label %341
+insert done:   %166 = fpext float %303 to double
+	User before:   %332 = fmul double 0x3FC8F8B83C69A60D, %331
+	User after:   %332 = fmul double 0x3FC8F8B83C69A60D, %166
+replace done
+inst:   %332 = fmul double 0x3FC8F8B83C69A60D, %166
+moveInst:   %332 = fmul double 0x3FC8F8B83C69A60D, %166
+Clone:   %332 = fmul double 0x3FC8F8B83C69A60D, %166
+To:   br i1 %2, label %167, label %342
+insert done:   %167 = fmul double 0x3FC8F8B83C69A60D, %166
+	User before:   %336 = fsub double %333, %335
+	User after:   %336 = fsub double %167, %335
+replace done
+inst:   %334 = fpext float %301 to double
+moveInst:   %334 = fpext float %301 to double
+Clone:   %334 = fpext float %301 to double
+To:   br i1 %2, label %168, label %343
+insert done:   %168 = fpext float %302 to double
+	User before:   %336 = fmul double 0x3FEF6297CFF75CB0, %335
+	User after:   %336 = fmul double 0x3FEF6297CFF75CB0, %168
+replace done
+inst:   %336 = fmul double 0x3FEF6297CFF75CB0, %168
+moveInst:   %336 = fmul double 0x3FEF6297CFF75CB0, %168
+Clone:   %336 = fmul double 0x3FEF6297CFF75CB0, %168
+To:   br i1 %2, label %169, label %344
+insert done:   %169 = fmul double 0x3FEF6297CFF75CB0, %168
+	User before:   %338 = fsub double %167, %337
+	User after:   %338 = fsub double %167, %169
+replace done
+inst:   %338 = fsub double %167, %169
+moveInst:   %338 = fsub double %167, %169
+Clone:   %338 = fsub double %167, %169
+To:   br i1 %2, label %170, label %345
+insert done:   %170 = fsub double %167, %169
+	User before:   %340 = fptrunc double %339 to float
+	User after:   %340 = fptrunc double %170 to float
+replace done
+inst:   %340 = fptrunc double %170 to float
+moveInst:   %340 = fptrunc double %170 to float
+Clone:   %340 = fptrunc double %170 to float
+To:   br i1 %2, label %171, label %346
+insert done:   %171 = fptrunc double %170 to float
+	User before:   store float %341, float* %344, align 4
+	User after:   store float %171, float* %344, align 4
+replace done
+inst:   %342 = add nsw i32 %i.0, 56
+moveInst:   %342 = add nsw i32 %i.0, 56
+Clone:   %342 = add nsw i32 %i.0, 56
+To:   br i1 %2, label %172, label %347
+insert done:   %172 = add nsw i32 %i.0, 56
+	User before:   %344 = sext i32 %343 to i64
+	User after:   %344 = sext i32 %172 to i64
+replace done
+inst:   %344 = sext i32 %172 to i64
+moveInst:   %344 = sext i32 %172 to i64
+Clone:   %344 = sext i32 %172 to i64
+To:   br i1 %2, label %173, label %348
+insert done:   %173 = sext i32 %172 to i64
+	User before:   %346 = getelementptr inbounds float* %out, i64 %345
+	User after:   %346 = getelementptr inbounds float* %out, i64 %173
+replace done
+inst:   %346 = getelementptr inbounds float* %out, i64 %173
+moveInst:   %346 = getelementptr inbounds float* %out, i64 %173
+Clone:   %346 = getelementptr inbounds float* %out, i64 %173
+To:   br i1 %2, label %174, label %349
+insert done:   %174 = getelementptr inbounds float* %out, i64 %173
+	User before:   store float %171, float* %347, align 4
+	User after:   store float %171, float* %174, align 4
+replace done
+inst:   store float %171, float* %174, align 4
+moveInst:   store float %171, float* %174, align 4
+Clone:   store float %171, float* %174, align 4
+To:   br i1 %2, label %175, label %350
+insert done:   store float %.if.sel14, float* %174
+replace done
+inst:   br label %348
+Erase:   store float %171, float* %174, align 4
+Erase:   %347 = getelementptr inbounds float* %out, i64 %173
+Erase:   %346 = sext i32 %172 to i64
+Erase:   %345 = add nsw i32 %i.0, 56
+Erase:   %344 = fptrunc double %170 to float
+Erase:   %343 = fsub double %167, %169
+Erase:   %342 = fmul double 0x3FEF6297CFF75CB0, %168
+Erase:   %341 = fpext float %308 to double
+Erase:   %340 = fmul double 0x3FC8F8B83C69A60D, %166
+Erase:   %339 = fpext float %311 to double
+Erase:   store float %162, float* %165, align 4
+Erase:   %338 = getelementptr inbounds float* %out, i64 %164
+Erase:   %337 = sext i32 %163 to i64
+Erase:   %336 = add nsw i32 %i.0, 40
+Erase:   %335 = fptrunc double %161 to float
+Erase:   %334 = fadd double %158, %160
+Erase:   %333 = fmul double 0x3FE1C73B39AE68C9, %159
+Erase:   %332 = fpext float %310 to double
+Erase:   %331 = fmul double 0x3FEA9B66290EA1A3, %157
+Erase:   %330 = fpext float %309 to double
+Erase:   store float %153, float* %156, align 4
+Erase:   %329 = getelementptr inbounds float* %out, i64 %155
+Erase:   %328 = sext i32 %154 to i64
+Erase:   %327 = add nsw i32 %i.0, 24
+Erase:   %326 = fptrunc double %152 to float
+Erase:   %325 = fsub double %149, %151
+Erase:   %324 = fmul double 0x3FE1C73B39AE68C9, %150
+Erase:   %323 = fpext float %136 to double
+Erase:   %322 = fmul double 0x3FEA9B66290EA1A3, %148
+Erase:   %321 = fpext float %137 to double
+Erase:   store float %144, float* %147, align 4
+Erase:   %320 = getelementptr inbounds float* %out, i64 %146
+Erase:   %319 = sext i32 %145 to i64
+Erase:   %318 = add nsw i32 %i.0, 8
+Erase:   %317 = fptrunc double %143 to float
+Erase:   %316 = fadd double %140, %142
+Erase:   %315 = fmul double 0x3FEF6297CFF75CB0, %141
+Erase:   %314 = fpext float %138 to double
+Erase:   %313 = fmul double 0x3FC8F8B83C69A60D, %139
+Erase:   %312 = fpext float %135 to double
+Erase:   %311 = fadd float %230, %307
+U:   %166 = fpext float %311 to double
+While deleting: float %
+Use still stuck around after Def is destroyed:  <badref> = fadd float %230, %307
+Assertion failed: (use_empty() && "Uses remain when a value is destroyed!"), function ~Value, file /Users/dongwook/workspace/llvm/llvm/lib/IR/Value.cpp, line 80.
+./test.sh: line 4: 68738 Abort trap: 6           ./simple-tool dct.bc dct_o.bc
+llvm-dis: Invalid bitcode signature
+Pass Arguments:  -targetlibinfo -no-aa -lazy-value-info -correlated-propagation -domtree -loops -loop-simplify -loop-instsimplify -loop-simplify -memdep -gvn -sccp -domtree -mem2reg -instcombine -verify -verify-di
+Target Library Information
+No Alias Analysis (always returns 'may' alias)
+  ModulePass Manager
+    FunctionPass Manager
+      Lazy Value Information Analysis
+      Value Propagation
+      Dominator Tree Construction
+      Natural Loop Information
+      Canonicalize natural loops
+      Loop Pass Manager
+        Simplify instructions in loops
+      Canonicalize natural loops
+      Memory Dependence Analysis
+      Global Value Numbering
+      Sparse Conditional Constant Propagation
+      Dominator Tree Construction
+      Promote Memory to Register
+      Combine redundant instructions
+      Module Verifier
+    Debug Info Verifier
+    Bitcode Writer
+warning: overriding the module target triple with x86_64-apple-macosx10.10.0
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "dct(short*, short*)", referenced from:
+      _main in test-5a074c.o
+  "dct_c(float const*, float*)", referenced from:
+      _main in test-5a074c.o
+  "dct_r(float const*, float*)", referenced from:
+      _main in test-5a074c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+./test.sh: line 10: ./dot_new: No such file or directory
+./test.sh: line 11: ./dot: No such file or directory

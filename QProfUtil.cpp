@@ -48,9 +48,9 @@ Constant* getTraceFunc(Module* m)
     FunctionType::get(voidTy,argsRef, false);
   return m->getOrInsertFunction("trace",traceType);
 }
-Value* castDouble(Instruction* I,Value* v)
+Value* castDouble(Instruction* I,Value* v, Instruction* insertPtr)
 {
-  IRBuilder<> builder(I);
+  IRBuilder<> builder(insertPtr);
   LLVMContext& C = I->getContext();
   Type* dbTy=Type::getDoubleTy(C);
   if(v->getType()!=dbTy)
@@ -68,20 +68,20 @@ Module* getModuleFromVal(Instruction* I)
   Function *M = I->getParent() ? I->getParent()->getParent() : NULL;
   return M ? M->getParent() : NULL;
 }
-void putTraceFunc(Instruction* I, Constant* id, Constant* idx)
+void putTraceFunc(Instruction* I, Constant* id, Constant* idx, Instruction* insertPtr)
 {
-  IRBuilder<> builder(I);
+  IRBuilder<> builder(insertPtr);
   assert(isFloatTy(I->getType())==true);
   LLVMContext& C=I->getContext();
   Function* trace=cast<Function>(getTraceFunc(getModuleFromVal(I)));
   std::vector<Value*> args;
   args.push_back(id);
   args.push_back(idx);
-  args.push_back(castDouble(I,I));
+  args.push_back(castDouble(I,I,insertPtr));
   for(int i=0,e=I->getNumOperands(); i<e; i++)
   {
     Value* arg=I->getOperand(i);
-    args.push_back(castDouble(I,arg));
+    args.push_back(castDouble(I,arg,insertPtr));
   }
   ArrayRef<Value*> argRef(args);
   Value* callinst=builder.CreateCall(trace, argRef);

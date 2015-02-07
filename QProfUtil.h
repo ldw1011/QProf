@@ -41,9 +41,9 @@ bool isFloatTy(Type* type);
 bool supportedInst(Instruction *I);
 Constant* getTraceFunc(Module* m);
 bool supportedInst(Instruction *I);
-Value* castDouble(Instruction* I,Value* v);
+Value* castDouble(Instruction* I,Value* v,Instruction* insertPtr);
 Module* getModuleFromVal(Instruction* I);
-void putTraceFunc(Instruction* I, Constant* id, Constant* idx);
+void putTraceFunc(Instruction* I, Constant* id, Constant* idx,Instruction* insertPtr);
 template<class T>
 void setQProfIDMetadata(T* I, string tag, int id)
 {

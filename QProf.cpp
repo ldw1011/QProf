@@ -8,9 +8,9 @@ bool QProf::runOnModule(Module &M)
   Type* int32Ty=Type::getInt32Ty(C);
   for (Module::iterator f = M.begin(), e=M.end(); f!=e; ++f)
   {
-    map<int,int> op_id_counter; 
+    map<int,int> op_id_counter;
     Function* F=&(*f);
-    LoopInfo* LI;
+
     if(F->isDeclaration())
     {
       continue;
@@ -26,7 +26,9 @@ bool QProf::runOnModule(Module &M)
       {
 
         errs()<<*I<<" "<<op_id<<" "<<op_id_counter[op_id]<<"\n";
-        putTraceFunc(I, ConstantInt::get(int32Ty, op_id), ConstantInt::get(int32Ty, op_id_counter[op_id]));
+        inst_iterator insertPtr=Inst;
+        insertPtr++;
+        putTraceFunc(I, ConstantInt::get(int32Ty, op_id), ConstantInt::get(int32Ty, op_id_counter[op_id]),&(*insertPtr));
         op_id_counter[op_id]++;
       }
     }
