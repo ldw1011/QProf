@@ -1,5 +1,6 @@
 #include "IfConversion.h"
-#include "boost/unordered_set.hpp"
+#include <unordered_set>
+#include <functional>
 #include "CFG.h"
 struct ifStruct
 {
@@ -40,14 +41,22 @@ struct ifStruct
   BasicBlock* body[2];
   BasicBlock* tail;
 };
-std::size_t hash_value(const ifStruct& i)
+namespace  std
 {
-  std::size_t seed=0;
-  boost::hash_combine(seed, i.head);
-  boost::hash_combine(seed, i.tail);
-  boost::hash_combine(seed, i.body[0]);
-  boost::hash_combine(seed, i.body[1]);
-  return seed;
+  template<>
+    struct hash<ifStruct>
+    {
+      typedef ifStruct argument_type;
+      typedef std::size_t result_type;
+      result_type operator()(argument_type const& s) const
+      {
+        result_type const h1 ( std::hash<BasicBlock*>()(s.head));
+        result_type const h2 ( std::hash<BasicBlock*>()(s.body[2]));
+        result_type const h3 ( std::hash<BasicBlock*>()(s.body[1]));
+        result_type const h4 ( std::hash<BasicBlock*>()(s.tail));
+        return h1 ^ (h2 <<1 ) ^ (h3 <<2) ^ (h4 <<3);
+      }
+    };
 }
 /*
 ostream& operator<<(ostream& os,const ifStruct& i)
@@ -205,7 +214,7 @@ void eliminateDiamondIfStruct(ifStruct& ifstruct)
 }
 bool IfConversion::runOnFunction(Function &F)
 {
-  boost::unordered_set<ifStruct> ifSet;
+  std::unordered_set<ifStruct> ifSet;
   int prev_setsize=0;
   do
   {
@@ -226,6 +235,7 @@ bool IfConversion::runOnFunction(Function &F)
     }
 
   }
+  return true;
 } 
 char IfConversion::ID = 1;
 static RegisterPass<IfConversion> X("IfConversion","IfConversion", false, false);

@@ -39,11 +39,15 @@ using namespace std;
 using namespace llvm;
 bool isFloatTy(Type* type);
 bool supportedInst(Instruction *I);
-Constant* getTraceFunc(Module* m);
+Constant* getBinaryTraceFunc(Module* m);
 bool supportedInst(Instruction *I);
 Value* castDouble(Instruction* I,Value* v,Instruction* insertPtr);
 Module* getModuleFromVal(Instruction* I);
-void putTraceFunc(Instruction* I, Constant* id, Constant* idx,Instruction* insertPtr);
+Constant* getFCMPTraceFunc(Module* m);
+Constant* getSelectTraceFunc(Module* m);
+void putBinaryTraceFunc(Instruction* I, Constant* id, Constant* idx,Instruction* insertPtr);
+void putFCMPTraceFunc(Instruction* I, Constant* id, Constant* idx,Instruction* insertPtr);
+void putSelectTraceFunc(Instruction* I, Constant* id, Constant* idx,Instruction* insertPtr);
 template<class T>
 void setQProfIDMetadata(T* I, string tag, int id)
 {

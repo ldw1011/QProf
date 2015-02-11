@@ -21,7 +21,7 @@ bool QTag::runOnModule(Module &M)
     for (inst_iterator Inst = inst_begin(*F), E = inst_end(*F); Inst != E; ++Inst)
     {
       Instruction* I=&(*Inst);
-      if(isFloatTy(I->getType()) && supportedInst(I))
+      if( supportedInst(I))
       {
         errs()<<*I<<"\n";
         setQProfIDMetadata(I,"op.id",opid);

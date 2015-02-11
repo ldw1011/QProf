@@ -1,4 +1,3 @@
-#define DEBUG_TYPE "QTag"
 #include "llvm/IR/Function.h"
 #include "llvm/IR/Module.h"
 #include "llvm/Pass.h"
@@ -36,7 +35,6 @@
 #include <vector>
 #include <math.h>
 #include <stdlib.h>
-#define DEBUG_MSG(A) A
 using namespace llvm;
 using namespace std;
 struct QTag : public ModulePass

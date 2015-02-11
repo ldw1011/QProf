@@ -1,6 +1,5 @@
 #include "ExtractGraphModel.h"
 #include "llvm/IR/User.h"
-
 bool ExtractGraphModel::runOnModule(Module &M)
 {
   for (Module::iterator F = M.begin(), EF=M.end(); F!=EF; ++F)
@@ -9,9 +8,9 @@ bool ExtractGraphModel::runOnModule(Module &M)
     {
       continue;
     }
-    
+
     /*
-       Argument node 
+       Argument node
     for (Function::arg_iterator ab=F->arg_begin(), ae=F->arg_end(); ab!=ae; ++ab)
     {
        Value* op=&(*ab);
@@ -28,7 +27,7 @@ bool ExtractGraphModel::runOnModule(Module &M)
       addBBNode(cdfg,bb);
       errs() << "Basic block (name=" << B->getName() << ") has "
       << B->size() << " instructions.\n";
-      
+
       for (BasicBlock::iterator I = B->begin(), IE = B->end(); I != IE; ++I)
       {
         errs() << *I << "\n";
@@ -45,7 +44,7 @@ bool ExtractGraphModel::runOnModule(Module &M)
       addBBNode(cdfg,bb);
       errs() << "Basic block (name=" << B->getName() << ") has "
       << B->size() << " instructions.\n";
-      
+
       for (BasicBlock::iterator I = B->begin(), IE = B->end(); I != IE; ++I)
       {
         errs() << *I << "\n";
@@ -53,7 +52,8 @@ bool ExtractGraphModel::runOnModule(Module &M)
         if(isa<GetElementPtrInst>(inst))
         {
           GetElementPtrInst* gep=cast<GetElementPtrInst>(I);
-          for (User::op_iterator op_b=gep->idx_begin(), op_e=gep->idx_end(); op_b!=op_e; op_b++)
+          for (User::op_iterator op_b=gep->idx_begin(),
+              op_e=gep->idx_end(); op_b!=op_e; op_b++)
           {
             Value* op=op_b->get();
             if(isa<Instruction>(op) || isa<Argument>(op))
@@ -65,7 +65,8 @@ bool ExtractGraphModel::runOnModule(Module &M)
         }
         else
         {
-          for (User::op_iterator op_b=I->op_begin(), op_e=I->op_end(); op_b!=op_e; op_b++)
+          for (User::op_iterator op_b=I->op_begin(),
+              op_e=I->op_end(); op_b!=op_e; op_b++)
           {
             Value* op=op_b->get();
             if(isa<Instruction>(op))

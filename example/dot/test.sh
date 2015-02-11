@@ -6,7 +6,8 @@ llvm-dis dct_o.bc
 opt -correlated-propagation  -loop-instsimplify -loop-simplify -gvn -sccp -mem2reg -instcombine -debug-pass=Structure dct_o.bc > dct_f.bc
 llvm-dis dct_f.bc
 
-clang++ -o dot_new dct_o.bc test.cpp
+clang++ -o dot_new dct_o.bc test.cpp trace.c stats.cpp
+clang++ -o dot dct.cpp test.cpp
 ./dot_new
 ./dot
 

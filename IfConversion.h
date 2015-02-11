@@ -1,4 +1,3 @@
-#define DEBUG_TYPE "IfConversion"
 #include "llvm/IR/Function.h"
 #include "llvm/IR/Module.h"
 #include "llvm/Pass.h"
@@ -47,9 +46,11 @@ struct IfConversion : public FunctionPass
   }
   virtual bool doInitialization(Module &M)
   {
+    return true;
   }
   virtual bool doFinalization(Module &M)
   {
+    return true;
   }
   virtual bool runOnFunction(Function &F) ;
   void getAnalysisUsage(AnalysisUsage &AU) const

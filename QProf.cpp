@@ -28,7 +28,24 @@ bool QProf::runOnModule(Module &M)
         errs()<<*I<<" "<<op_id<<" "<<op_id_counter[op_id]<<"\n";
         inst_iterator insertPtr=Inst;
         insertPtr++;
-        putTraceFunc(I, ConstantInt::get(int32Ty, op_id), ConstantInt::get(int32Ty, op_id_counter[op_id]),&(*insertPtr));
+        
+        if(I->getOpcode()==Instruction::FAdd 
+            || I->getOpcode()==Instruction::FMul)
+        {
+          putBinaryTraceFunc(I, ConstantInt::get(int32Ty, op_id), ConstantInt::get(int32Ty, op_id_counter[op_id]),&(*insertPtr));
+        }
+        else if(I->getOpcode()==Instruction::FCmp)
+        {
+          putFCMPTraceFunc(I, ConstantInt::get(int32Ty, op_id), ConstantInt::get(int32Ty, op_id_counter[op_id]),&(*insertPtr));
+        }
+        else if(I->getOpcode()==Instruction::Select)
+        {
+          putSelectTraceFunc(I, ConstantInt::get(int32Ty, op_id), ConstantInt::get(int32Ty, op_id_counter[op_id]),&(*insertPtr));
+        }
+        else
+        {
+          errs()<<"WHAT\n";
+        }
         op_id_counter[op_id]++;
       }
     }

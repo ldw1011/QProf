@@ -57,7 +57,8 @@ int main(int argc, char** argv)
     PM.add(createInstructionSimplifierPass());
 
 
-//    PM.add(new QProf());
+    PM.add(new ExtractGraphModel());
+    PM.add(new QProf());
 //    PM.add(new ExtractGraphModel());
 
 //    PM.add(new TargetLibraryInfo());
