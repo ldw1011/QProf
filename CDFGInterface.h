@@ -1,6 +1,7 @@
-// Without RTTI 
+// Without RTTI
 #include "DFG.h"
 #include <memory>
+#include <string>
 class CDFG;
 namespace llvm
 {
@@ -21,11 +22,11 @@ typedef std::shared_ptr<CDFG> cdfg_ptr;
 cdfg_ptr createCDFG();
 void addBBNode(cdfg_ptr cdfg, llvm::BasicBlock* bb);
 
-void addInstNode(cdfg_ptr cdfg, llvm::BasicBlock* bb, 
+void addInstNode(cdfg_ptr cdfg, llvm::BasicBlock* bb,
     llvm::Value* inst,IP& ip);
 
 void addInstEdge(cdfg_ptr cdfg, llvm::Value* from,
     llvm::Value* to);
 void addBBEdge(cdfg_ptr cdfg, llvm::BasicBlock* from,
     llvm::BasicBlock* to);
-void print_cdfg(cdfg_ptr cdfg);
+void print_cdfg(cdfg_ptr cdfg, std::string func_name);

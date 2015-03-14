@@ -17,9 +17,9 @@ struct statistics
   double moment;
   double n;
 };
-ostream& operator<<(ostream& os, const statistics& is) 
+ostream& operator<<(ostream& os, const statistics& is)
 {
-  os<<"Mean: "<<is.mean<<" Moment: "<<is.moment<<" var: "<<is.moment - is.mean*is.mean <<" n: "<<is.n;
+  os<<is.mean<<","<<is.moment - is.mean*is.mean<<","<<is.n;
   return os;
 }
 class Stats
@@ -63,14 +63,13 @@ class Stats
     {
       for(auto& i : st)
       {
-        cout<<i.first<<"\n";
+
         for(auto& j : i.second)
         {
-          cout<<"\t"<<j.first<<"\n";
+
           for(auto& k : j.second)
           {
-            cout<<"\t"<<"\t"<<k.first<<" ";
-            cout<<k.second<<"\n"; 
+            cout<<i.first<<","<<j.first<<","<<k.first<<","<<k.second<<"\n";
           }
         }
       }
@@ -86,16 +85,16 @@ extern "C"
   void _trace(int id, int idx, double ret, double op0, double op1)
   {
     Stats& st= getStats();
-    st.trace(id, idx, ret, op0, op1); 
+    st.trace(id, idx, ret, op0, op1);
   }
   void _traceFCMP(int id, int idx, bool ret, double op0, double op1)
   {
     Stats& st= getStats();
-    st.traceFCMP(id, idx, ret, op0, op1); 
+    st.traceFCMP(id, idx, ret, op0, op1);
   }
   void _traceSelect(int id, int idx, double ret, bool cond, double op0, double op1)
   {
     Stats& st= getStats();
-    st.traceSelect(id, idx, ret, cond, op0, op1); 
+    st.traceSelect(id, idx, ret, cond, op0, op1);
   }
 }

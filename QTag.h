@@ -55,3 +55,21 @@ struct QTag : public ModulePass
   }
   virtual bool runOnModule(Module &M);
 };
+struct QTagPost : public ModulePass
+{
+  static char ID;
+  Module* mModule;
+  QTagPost() : ModulePass(ID)
+  {
+  }
+  void getAnalysisUsage(AnalysisUsage &AU) const
+  {
+    //AU.addRequired<LoopInfo>();
+    //AU.addRequired<ScalarEvolution>();
+    // FIXME: Loop unroll requires LCSSA. And LCSSA requires dom info.
+    // If loop unroll does not preserve dom info then LCSSA pass on next
+    // loop will receive invalid dom info.
+    // For now, recreate dom info, if loop is unrolled.
+  }
+  virtual bool runOnModule(Module &M);
+};

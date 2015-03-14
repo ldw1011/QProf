@@ -1,5 +1,6 @@
 #include "ExtractGraphModel.h"
 #include "llvm/IR/User.h"
+#include "QProfUtil.h"
 bool ExtractGraphModel::runOnModule(Module &M)
 {
   for (Module::iterator F = M.begin(), EF=M.end(); F!=EF; ++F)
@@ -26,13 +27,22 @@ bool ExtractGraphModel::runOnModule(Module &M)
       BasicBlock* bb=&(*B);
       addBBNode(cdfg,bb);
       errs() << "Basic block (name=" << B->getName() << ") has "
-      << B->size() << " instructions.\n";
+          << B->size() << " instructions.\n";
 
       for (BasicBlock::iterator I = B->begin(), IE = B->end(); I != IE; ++I)
       {
         errs() << *I << "\n";
         Value* inst=&(*I);
-        IP ip(inst);
+
+        // string opcodebuf;
+        string _asmBuf;
+
+        // raw_string_ostream opcodeBuf(opcodebuf);
+        raw_string_ostream asmBuf(_asmBuf);
+        asmBuf<<*inst;
+        int op_id=getQProfIDMetadata(&(*I),"op.id");
+        int op_idx=getQProfIDMetadata(&(*I),"op.idx");
+        IP ip(inst,op_id,op_idx,cast<Instruction>(inst)->getOpcodeName(), _asmBuf);
         addInstNode(cdfg,bb,inst,ip);
       }
     }
@@ -43,13 +53,14 @@ bool ExtractGraphModel::runOnModule(Module &M)
       BasicBlock* bb=&(*B);
       addBBNode(cdfg,bb);
       errs() << "Basic block (name=" << B->getName() << ") has "
-      << B->size() << " instructions.\n";
+            << B->size() << " instructions.\n";
 
       for (BasicBlock::iterator I = B->begin(), IE = B->end(); I != IE; ++I)
       {
         errs() << *I << "\n";
+
         Value* inst=&(*I);
-        if(isa<GetElementPtrInst>(inst))
+        /*if(isa<GetElementPtrInst>(inst))
         {
           GetElementPtrInst* gep=cast<GetElementPtrInst>(I);
           for (User::op_iterator op_b=gep->idx_begin(),
@@ -64,7 +75,7 @@ bool ExtractGraphModel::runOnModule(Module &M)
           }
         }
         else
-        {
+        {*/
           for (User::op_iterator op_b=I->op_begin(),
               op_e=I->op_end(); op_b!=op_e; op_b++)
           {
@@ -75,10 +86,10 @@ bool ExtractGraphModel::runOnModule(Module &M)
               addInstEdge(cdfg, op, inst);
             }
           }
-        }
+        //}
       }
     }
-    print_cdfg(cdfg);
+    print_cdfg(cdfg,F->getName());
 
 
   }

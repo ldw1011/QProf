@@ -1,7 +1,6 @@
 #include "IfConversion.h"
 #include <unordered_set>
 #include <functional>
-#include "CFG.h"
 struct ifStruct
 {
   enum if_type_t {EMPTY_IF, DIAMOND_IF, TRIANGLE_IF};

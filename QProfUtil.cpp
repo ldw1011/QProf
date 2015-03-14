@@ -170,3 +170,4 @@ void putSelectTraceFunc(Instruction* I, Constant* id, Constant* idx, Instruction
   ArrayRef<Value*> argRef(args);
   Value* callinst=builder.CreateCall(trace, argRef);
 }
+

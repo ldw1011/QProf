@@ -14,6 +14,7 @@ struct BasicBlockProperties
     :bb(NULL) {}
   BasicBlockProperties(llvm::BasicBlock* _bb)
     :bb(_bb) {}
+  std::ostream& label(std::ostream& os);
   int id;
   llvm::BasicBlock* bb;
   std::vector<dfg_t::Vertex> insts;

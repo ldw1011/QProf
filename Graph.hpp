@@ -1,7 +1,7 @@
 #pragma once
-#include <boost/graph/subgraph.hpp>
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/graph_utility.hpp>
+#include <boost/graph/graphviz.hpp>
 using namespace boost;
 using namespace std;
 /* definition of basic boost::graph properties */
@@ -14,6 +14,17 @@ namespace boost {
 struct EG
 {
   int i;
+};
+template<typename G>
+class vertexwriter
+{
+  public:
+  vertexwriter(G* _g):g(_g) {}
+  void operator()(ostream& os, typename G::Vertex& v) const
+  {
+    g->properties(v).label(os);
+  }
+  G* g;
 };
 
 /* the graph base class template */
@@ -159,28 +170,59 @@ class Graph
       graph = rhs.graph;
       return *this;
     }
+    void write_graph(std::string filename)
+    {
+      std::cout<<"Filename: "<<filename<<"\n";
+      std::ofstream out(filename);
+      vertexwriter<Graph<VERTEXPROPERTIES,EDGEPROPERTIES> > vpw(this);
+      typedef typename graph_traits<GraphContainer>::directed_category cat_type;
+      typedef graphviz_io_traits<cat_type> Traits;
+      std::string name = "G";
+      out << Traits::name() << " " << escape_dot_string(name) << " {" << std::endl;
 
+
+      vertex_iter i, end;
+      typedef typename property_map<GraphContainer, vertex_properties_t>::type vertex_map_t;
+      for(boost::tie(i,end) = getVertices();i != end; ++i) {
+        auto param = properties(*i);
+        out << escape_dot_string(param);
+        vpw(out, *i); //print vertex attributes
+        out << ";" << std::endl;
+      }
+      edge_iter ei, edge_end;
+      for(boost::tie(ei, edge_end) = edges(graph); ei != edge_end; ++ei) {
+        auto snode = source(*ei, graph);
+        auto sparam = properties(snode);
+        auto tparam = properties(target(*ei,graph));
+        out << escape_dot_string(sparam)
+            << Traits::delimiter()
+            << escape_dot_string(tparam) << " ";
+        out << ";" << std::endl;
+      }
+      out << "}" << std::endl;
+      out.close();
+    }
   protected:
     GraphContainer graph;
 };
-/* how to use 
-  struct VertexProperties {
-  int i;
-  };
+/* how to use
+   struct VertexProperties {
+   int i;
+   };
 
-  struct EdgeProperties {
-  };
+   struct EdgeProperties {
+   };
 
-  typedef Graph<VertexProperties, EdgeProperties> MyGraph;
+   typedef Graph<VertexProperties, EdgeProperties> MyGraph;
 
-  MyGraph g;
+   MyGraph g;
 
-  VertexProperties vp;
-  vp.i = 42;
+   VertexProperties vp;
+   vp.i = 42;
 
-  MyGraph::Vertex v = g.AddVertex(vp);
+   MyGraph::Vertex v = g.AddVertex(vp);
 
-  g.properties(v).i = 23;
+   g.properties(v).i = 23;
 
 
-   */
+ */

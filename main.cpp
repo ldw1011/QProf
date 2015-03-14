@@ -24,7 +24,7 @@ int main(int argc, char** argv)
   SMDiagnostic Err;
   std::cout<<argv[1]<<std::endl;
   Module *Mod = ParseIRFile(argv[1], Err, getGlobalContext());
-  
+
   Err.print(argv[0],errs());
   std::string ErrInfo="";
   raw_fd_ostream out(argv[2],ErrInfo,llvm::sys::fs::F_None);
@@ -56,7 +56,7 @@ int main(int argc, char** argv)
     PM.add(createCorrelatedValuePropagationPass());
     PM.add(createInstructionSimplifierPass());
 
-
+    PM.add(new QTagPost());
     PM.add(new ExtractGraphModel());
     PM.add(new QProf());
 //    PM.add(new ExtractGraphModel());
@@ -85,7 +85,7 @@ int main(int argc, char** argv)
    //PM.add(createCorrelatedValuePropagationPass());
    //PM.add(createInstructionSimplifierPass());
     PM.run(*Mod);
-    WriteBitcodeToFile(Mod,out); 
+    WriteBitcodeToFile(Mod,out);
   }
   else
   {
